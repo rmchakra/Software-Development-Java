@@ -1,0 +1,16 @@
+Name : Rohan Chakraborty
+student ID number : 1233719421
+email: rmchakra@usc.edu
+lecture section number : 30303
+functionality you know isn’t working: 
+	"0.1% - staff office hours looks the same as the 201 site and displays the correct content"
+	
+	From the piazza post: LIST OF ASSUMPTIONS -> JSON FILE ->You can assume the lectures/assignments/etc will be sorted in the provided JSON.:
+	
+	Hence, the following weren't implemented from the grading criteria
+	1. 0.15% - lectures displayed in order based on the “week” and “number” attributes
+	2. 0.1% - assignments are displayed in order based on the “number” attribute
+
+
+special instructions
+Program is started at index.jsp. My main class/method is in the Main package. Class structure follows the jason file format. Solution code for assignment 1 was used for this project
