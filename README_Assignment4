@@ -9,3 +9,91 @@ functionality you know isn’t working:
 special instructions
 Server : gameRoom.java
 Client : playerClient.java
+
+Below this is an explanation in pseudocode of the functionality that was implemented but is not working as well as planned functionality prevented by this issue. This is for your reference and may not be necessary for grading
+
+
+=================================================================================
+================================================================================
+EXPLANATION BEGINS (OPTIONAL)
+
+round: while(true) - bet() inputMoves() if(roundResult) break; run in all server threads 
+	a. betting 	bet()			
+		each server -> 									
+					->message(  creator’s turn). Waits for bet
+		client ->while(true) 
+			->receive turn. if turn = end of betting then break
+			->print whose turn
+			 -> if(player’s turn)  
+					sends its server bet->
+			-> receive bet. print bet
+		each server 
+			->receives bet and set bet var
+			->messageAll ( player name bet chips)
+			-> if(userName.equals players.size-1.username
+				->end of round -> messageAll(end of betting)
+			-> else messageAll( player whose turn next) i.e. playerIndex+1
+				
+//server and client are both now free
+		
+	b. inputMoves (player : game.getPlayers) play()
+				client -> waits for UI
+				server ->
+					if(creator) 
+							-> assign two cards to each player (server thread player. set cards) and to game.dealerCards
+							-> messageAll(UI)
+					wait for received UI
+				client -> send message received UI
+				server -> message(  creator’s turn). Waits for move
+				
+				client ->while(true) 
+						->receive turn. if turn = end of round then break
+						->print whose turn
+			 			-> if(player’s turn)  
+							sends server move->
+						-> receive move print move
+				server 
+					->while (true)
+					->receives move and implement it
+					->messageAll ( move)
+
+need to add an inout here
+					->if(stay or bust)
+						-> if(userName.equals players.size-1.username  //i.e. reached last player
+							->end of round -> messageAll(end of round)
+						-> else messageAll( player whose turn next) i.e. playerIndex+1
+						->break;
+					-> else messageAll( username ’s turn)
+		
+//server and client are both now free
+	c. roundResult returns if endgame
+		server-> uses total, bet, and dealer to calc new chips
+				if(creator)
+					-> bool endGame = false, server thread  winner = creator; String loser
+					for(server threads) 
+						->calculate chips
+						-> if(chips>winner’s chips)	winner = current thread					
+						-> if(no chips)
+							->endGame = true, loser = thread.name 
+					->if(endGame)
+						->messageAllExcept self(result = winner.name , loser) username = endGame.
+						-> message self
+					->else 
+						->messageAllExcept self() username =no endGame.
+						-> message self
+				->receive Endgame
+				->if endgame return true. 
+				->else 
+					->send max players						
+					->messageAll(result = username result new chips)
+					->return false
+		client ->receive if endgame
+				->send endgame()
+				->if true
+					->print result.  return true
+				->else
+					-> receive max players
+					->while(i<maxPlayers)
+						-> receive result
+						->print result
+					->return false;
