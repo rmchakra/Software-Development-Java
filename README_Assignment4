@@ -1,0 +1,11 @@
+Name : Rohan Chakraborty
+student ID number : 1233719421
+email: rmchakra@usc.edu
+lecture section number : 30303
+
+functionality you know isn’t working: 
+ I am able to print UI, and distribute cards. After player makes a move (hit or stay) program crashes. Functionality is implemented and was working until made a mistake at last minute changed something which causes the stream to get corrupted when reading from socket. 
+
+special instructions
+Server : gameRoom.java
+Client : playerClient.java
