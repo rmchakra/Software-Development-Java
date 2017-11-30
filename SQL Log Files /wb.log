@@ -1,0 +1,214 @@
+02:01:49 [INF][      Workbench]: Starting up Workbench
+02:01:49 [INF][   WBContext UI]: Initializing workbench context UI with these values:
+	base dir: /Applications/MySQLWorkbench.app/Contents/Resources
+	plugin path: /Applications/MySQLWorkbench.app/Contents/PlugIns
+	struct path: /Applications/MySQLWorkbench.app/Contents/Resources/grt
+	module path: /Applications/MySQLWorkbench.app/Contents/PlugIns:/Applications/MySQLWorkbench.app/Contents/Resources/plugins
+	library path: /Applications/MySQLWorkbench.app/Contents/Resources/libraries
+	user data dir: /Users/admin/Library/Application Support/MySQL/Workbench
+	open at start: 
+	open type: 
+	run at startup: 
+	run type: 
+	Force SW rendering: No
+	Force OpenGL: No
+	quit when done: No
+02:01:49 [INF][      WBContext]: WbContext::init
+02:01:49 [INF][            WBA]: Looking for extension modules for WBA...
+02:01:49 [INF][            WBA]: 0 extension modules found
+02:01:49 [WRN][            grt]: /Users/admin/Library/Application Support/MySQL/Workbench/connections.xml:17: link '310983AF-3F14-40DD-AA09-C4C4082BA7A1' <object GrtObject> key=owner could not be resolved
+02:01:49 [INF][      WBContext]: System info:
+ 	MySQL Workbench Community (GPL) for Mac OS X version 6.3.9 CE build 10690321 (64 bit)
+	Configuration Directory: /Users/admin/Library/Application Support/MySQL/Workbench
+	Data Directory: /Applications/MySQLWorkbench.app/Contents/Resources
+	Cairo Version: 1.10.2
+	OS: OS X 10.11.x El Capitan x86_64
+	CPU: 4x Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz - 8.00GiB RAM
+No video adapter info available
+
+02:01:52 [INF][SQL Editor Form]: Opened connection 'My201SQL' to MySQL Community Server (GPL) version 5.7.20
+02:02:45 [INF][      WBContext]: Loaded 0/0 new non-MySQL connections
+02:04:14 [INF][wb_admin_control.py:query_server_info:725]: WbAdminControl.connect_sql(): The server version stored in the server instance profile was "5.7". Changed to the version reported by the server: "5.7.20"
+02:04:14 [INF][wb_admin_control.py:server_polling_thread:569]: Monitoring thread running...
+02:24:08 [ERR][wb_admin_control.py:get_config_options:768]: Could not open the file "/etc/my.cnf": [Errno 2] No such file or directory: '/etc/my.cnf'
+02:24:08 [INF][wb_admin_control.py:query_server_installation_info:868]: Currently connected to MySQL server version '5.7.20', conn status = True, active plugins = ['partition', 'sha256_password', 'INNODB_CMPMEM_RESET', 'INNODB_SYS_FIELDS', 'INNODB_BUFFER_POOL_STATS', 'CSV', 'mysql_native_password', 'INNODB_SYS_TABLES', 'INNODB_FT_BEING_DELETED', 'INNODB_BUFFER_PAGE', 'INNODB_CMP_PER_INDEX_RESET', 'PERFORMANCE_SCHEMA', 'ARCHIVE', 'INNODB_FT_INDEX_CACHE', 'INNODB_CMP', 'INNODB_FT_CONFIG', 'InnoDB', 'INNODB_FT_DEFAULT_STOPWORD', 'INNODB_TRX', 'binlog', 'INNODB_LOCKS', 'INNODB_CMPMEM', 'INNODB_SYS_DATAFILES', 'INNODB_FT_INDEX_TABLE', 'INNODB_SYS_VIRTUAL', 'INNODB_LOCK_WAITS', 'MEMORY', 'INNODB_SYS_TABLESPACES', 'INNODB_SYS_FOREIGN_COLS', 'INNODB_SYS_INDEXES', 'MRG_MYISAM', 'INNODB_CMP_PER_INDEX', 'INNODB_FT_DELETED', 'INNODB_METRICS', 'INNODB_SYS_TABLESTATS', 'MyISAM', 'INNODB_TEMP_TABLE_INFO', 'INNODB_SYS_FOREIGN', 'INNODB_CMP_RESET', 'BLACKHOLE', 'INNODB_SYS_COLUMNS', 'keyring_file', 'ngram', 'INNODB_BUFFER_PAGE_LRU']
+02:24:08 [INF][wb_admin_control.py:acquire_admin_access:288]: Target OS detection returned: os_type=darwin, os_name=Mac OS X, os_variant=Mac OS X, os_version=10.11.6
+02:24:08 [INF][wb_log_reader.py:__init__:351]: Will use sudo and dd to get contents of log file /usr/local/mysql/data/mysqld.local.err
+02:24:19 [ERR][wb_admin_logs.py:update_ui:264]: Exception creating log reader: Password input cancelled
+Traceback (most recent call last):
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_admin_logs.py", line 261, in update_ui
+    self.log_reader = self.BackendLogReaderClass(*self.args)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_log_reader.py", line 573, in __init__
+    super(ErrorLogFileReader, self).__init__(ctrl_be, file_name, pat, chunk_size, truncate_long_lines, append_gaps=False)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_log_reader.py", line 366, in __init__
+    password = ctrl_be.password_handler.get_password_for('file', cached_only=False)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_control.py", line 606, in get_password_for
+    raise OperationCancelledError("Password input cancelled")
+OperationCancelledError: Password input cancelled
+
+02:24:19 [ERR][ LogViewGeneric]: Error creating log reader: Password input cancelled
+
+02:24:26 [INF][wb_admin_config_file_be.py:reload_possible_options:436]: Note! Workbench uses server version '(5, 7, 20)' from the server instance profile. Make the entry empty to auto pick version from the server.
+02:24:40 [ERR][wb_admin_main.py:shutdown:219]: shutting down admn
+02:24:41 [INF][wb_admin_control.py:server_polling_thread:585]: Monitoring thread done.
+02:24:42 [INF][wb_admin_control.py:server_polling_thread:569]: Monitoring thread running...
+02:24:42 [ERR][wb_admin_control.py:get_config_options:768]: Could not open the file "/etc/my.cnf": [Errno 2] No such file or directory: '/etc/my.cnf'
+02:24:42 [INF][wb_admin_control.py:query_server_installation_info:868]: Currently connected to MySQL server version '5.7.20', conn status = True, active plugins = ['partition', 'sha256_password', 'INNODB_CMPMEM_RESET', 'INNODB_SYS_FIELDS', 'INNODB_BUFFER_POOL_STATS', 'CSV', 'mysql_native_password', 'INNODB_SYS_TABLES', 'INNODB_FT_BEING_DELETED', 'INNODB_BUFFER_PAGE', 'INNODB_CMP_PER_INDEX_RESET', 'PERFORMANCE_SCHEMA', 'ARCHIVE', 'INNODB_FT_INDEX_CACHE', 'INNODB_CMP', 'INNODB_FT_CONFIG', 'InnoDB', 'INNODB_FT_DEFAULT_STOPWORD', 'INNODB_TRX', 'binlog', 'INNODB_LOCKS', 'INNODB_CMPMEM', 'INNODB_SYS_DATAFILES', 'INNODB_FT_INDEX_TABLE', 'INNODB_SYS_VIRTUAL', 'INNODB_LOCK_WAITS', 'MEMORY', 'INNODB_SYS_TABLESPACES', 'INNODB_SYS_FOREIGN_COLS', 'INNODB_SYS_INDEXES', 'MRG_MYISAM', 'INNODB_CMP_PER_INDEX', 'INNODB_FT_DELETED', 'INNODB_METRICS', 'INNODB_SYS_TABLESTATS', 'MyISAM', 'INNODB_TEMP_TABLE_INFO', 'INNODB_SYS_FOREIGN', 'INNODB_CMP_RESET', 'BLACKHOLE', 'INNODB_SYS_COLUMNS', 'keyring_file', 'ngram', 'INNODB_BUFFER_PAGE_LRU']
+02:24:42 [INF][wb_admin_control.py:acquire_admin_access:288]: Target OS detection returned: os_type=darwin, os_name=Mac OS X, os_variant=Mac OS X, os_version=10.11.6
+02:24:42 [INF][wb_admin_config_file_be.py:reload_possible_options:436]: Note! Workbench uses server version '(5, 7, 20)' from the server instance profile. Make the entry empty to auto pick version from the server.
+02:35:16 [INF][wb_log_reader.py:__init__:351]: Will use sudo and dd to get contents of log file /usr/local/mysql/data/mysqld.local.err
+02:35:39 [ERR][wb_log_reader.py:__init__:371]: Invalid password to sudo Incorrect password for sudo
+02:35:39 [ERR][wb_admin_logs.py:update_ui:264]: Exception creating log reader: Incorrect password for sudo
+Traceback (most recent call last):
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_admin_logs.py", line 261, in update_ui
+    self.log_reader = self.BackendLogReaderClass(*self.args)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_log_reader.py", line 573, in __init__
+    super(ErrorLogFileReader, self).__init__(ctrl_be, file_name, pat, chunk_size, truncate_long_lines, append_gaps=False)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_log_reader.py", line 368, in __init__
+    self.log_file = SudoTailInputFile(self.ctrl_be.server_helper, self.log_file_name, password)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 2159, in __init__
+    self.server_helper.check_file_readable(self.path, as_user = Users.ADMIN, user_password=self._password)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 1976, in check_file_readable
+    return self.file.check_file_readable(path, as_user, user_password)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 120, in decorated_function
+    return function(*args, **kw)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 1063, in check_file_readable
+    output_handler = output.write)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 509, in exec_cmd
+    return local_run_cmd_linux(command, as_user, user_password, self.sudo_prefix, output_handler, 15, options)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 324, in local_run_cmd_linux
+    raise InvalidPasswordError("Incorrect password for sudo")
+InvalidPasswordError: Incorrect password for sudo
+
+02:35:39 [ERR][ LogViewGeneric]: Error creating log reader: Incorrect password for sudo
+
+02:35:45 [INF][wb_log_reader.py:__init__:351]: Will use sudo and dd to get contents of log file /usr/local/mysql/data/mysqld.local.err
+02:35:46 [ERR][wb_log_reader.py:__init__:362]: Invalid password to sudo Incorrect password for sudo
+02:35:46 [ERR][wb_admin_logs.py:update_ui:264]: Exception creating log reader: Incorrect password for sudo
+Traceback (most recent call last):
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_admin_logs.py", line 261, in update_ui
+    self.log_reader = self.BackendLogReaderClass(*self.args)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_log_reader.py", line 573, in __init__
+    super(ErrorLogFileReader, self).__init__(ctrl_be, file_name, pat, chunk_size, truncate_long_lines, append_gaps=False)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_log_reader.py", line 356, in __init__
+    self.log_file = SudoTailInputFile(self.ctrl_be.server_helper, self.log_file_name, password)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 2159, in __init__
+    self.server_helper.check_file_readable(self.path, as_user = Users.ADMIN, user_password=self._password)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 1976, in check_file_readable
+    return self.file.check_file_readable(path, as_user, user_password)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 120, in decorated_function
+    return function(*args, **kw)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 1063, in check_file_readable
+    output_handler = output.write)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 509, in exec_cmd
+    return local_run_cmd_linux(command, as_user, user_password, self.sudo_prefix, output_handler, 15, options)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 324, in local_run_cmd_linux
+    raise InvalidPasswordError("Incorrect password for sudo")
+InvalidPasswordError: Incorrect password for sudo
+
+02:35:46 [ERR][ LogViewGeneric]: Error creating log reader: Incorrect password for sudo
+
+02:35:47 [INF][wb_log_reader.py:__init__:351]: Will use sudo and dd to get contents of log file /usr/local/mysql/data/mysqld.local.err
+02:35:47 [ERR][wb_log_reader.py:__init__:362]: Invalid password to sudo Incorrect password for sudo
+02:35:47 [ERR][wb_admin_logs.py:update_ui:264]: Exception creating log reader: Incorrect password for sudo
+Traceback (most recent call last):
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_admin_logs.py", line 261, in update_ui
+    self.log_reader = self.BackendLogReaderClass(*self.args)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_log_reader.py", line 573, in __init__
+    super(ErrorLogFileReader, self).__init__(ctrl_be, file_name, pat, chunk_size, truncate_long_lines, append_gaps=False)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_log_reader.py", line 356, in __init__
+    self.log_file = SudoTailInputFile(self.ctrl_be.server_helper, self.log_file_name, password)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 2159, in __init__
+    self.server_helper.check_file_readable(self.path, as_user = Users.ADMIN, user_password=self._password)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 1976, in check_file_readable
+    return self.file.check_file_readable(path, as_user, user_password)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 120, in decorated_function
+    return function(*args, **kw)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 1063, in check_file_readable
+    output_handler = output.write)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 509, in exec_cmd
+    return local_run_cmd_linux(command, as_user, user_password, self.sudo_prefix, output_handler, 15, options)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 324, in local_run_cmd_linux
+    raise InvalidPasswordError("Incorrect password for sudo")
+InvalidPasswordError: Incorrect password for sudo
+
+02:35:47 [ERR][ LogViewGeneric]: Error creating log reader: Incorrect password for sudo
+
+02:36:30 [INF][wb_log_reader.py:__init__:351]: Will use sudo and dd to get contents of log file /usr/local/mysql/data/mysqld.local.err
+02:36:30 [ERR][wb_log_reader.py:__init__:362]: Invalid password to sudo Incorrect password for sudo
+02:36:30 [ERR][wb_admin_logs.py:update_ui:264]: Exception creating log reader: Incorrect password for sudo
+Traceback (most recent call last):
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_admin_logs.py", line 261, in update_ui
+    self.log_reader = self.BackendLogReaderClass(*self.args)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_log_reader.py", line 573, in __init__
+    super(ErrorLogFileReader, self).__init__(ctrl_be, file_name, pat, chunk_size, truncate_long_lines, append_gaps=False)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_log_reader.py", line 356, in __init__
+    self.log_file = SudoTailInputFile(self.ctrl_be.server_helper, self.log_file_name, password)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 2159, in __init__
+    self.server_helper.check_file_readable(self.path, as_user = Users.ADMIN, user_password=self._password)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 1976, in check_file_readable
+    return self.file.check_file_readable(path, as_user, user_password)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 120, in decorated_function
+    return function(*args, **kw)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 1063, in check_file_readable
+    output_handler = output.write)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 509, in exec_cmd
+    return local_run_cmd_linux(command, as_user, user_password, self.sudo_prefix, output_handler, 15, options)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 324, in local_run_cmd_linux
+    raise InvalidPasswordError("Incorrect password for sudo")
+InvalidPasswordError: Incorrect password for sudo
+
+02:36:30 [ERR][ LogViewGeneric]: Error creating log reader: Incorrect password for sudo
+
+02:36:31 [INF][wb_log_reader.py:__init__:351]: Will use sudo and dd to get contents of log file /usr/local/mysql/data/mysqld.local.err
+02:36:31 [ERR][wb_log_reader.py:__init__:362]: Invalid password to sudo Incorrect password for sudo
+02:36:31 [ERR][wb_admin_logs.py:update_ui:264]: Exception creating log reader: Incorrect password for sudo
+Traceback (most recent call last):
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_admin_logs.py", line 261, in update_ui
+    self.log_reader = self.BackendLogReaderClass(*self.args)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_log_reader.py", line 573, in __init__
+    super(ErrorLogFileReader, self).__init__(ctrl_be, file_name, pat, chunk_size, truncate_long_lines, append_gaps=False)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_log_reader.py", line 356, in __init__
+    self.log_file = SudoTailInputFile(self.ctrl_be.server_helper, self.log_file_name, password)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 2159, in __init__
+    self.server_helper.check_file_readable(self.path, as_user = Users.ADMIN, user_password=self._password)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 1976, in check_file_readable
+    return self.file.check_file_readable(path, as_user, user_password)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 120, in decorated_function
+    return function(*args, **kw)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 1063, in check_file_readable
+    output_handler = output.write)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 509, in exec_cmd
+    return local_run_cmd_linux(command, as_user, user_password, self.sudo_prefix, output_handler, 15, options)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 324, in local_run_cmd_linux
+    raise InvalidPasswordError("Incorrect password for sudo")
+InvalidPasswordError: Incorrect password for sudo
+
+02:36:31 [ERR][ LogViewGeneric]: Error creating log reader: Incorrect password for sudo
+
+02:36:39 [INF][wb_log_reader.py:__init__:351]: Will use sudo and dd to get contents of log file /usr/local/mysql/data/mysqld.local.err
+02:36:39 [ERR][wb_log_reader.py:__init__:362]: Invalid password to sudo Incorrect password for sudo
+02:36:39 [ERR][wb_admin_logs.py:update_ui:264]: Exception creating log reader: Incorrect password for sudo
+Traceback (most recent call last):
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_admin_logs.py", line 261, in update_ui
+    self.log_reader = self.BackendLogReaderClass(*self.args)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_log_reader.py", line 573, in __init__
+    super(ErrorLogFileReader, self).__init__(ctrl_be, file_name, pat, chunk_size, truncate_long_lines, append_gaps=False)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_log_reader.py", line 356, in __init__
+    self.log_file = SudoTailInputFile(self.ctrl_be.server_helper, self.log_file_name, password)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 2159, in __init__
+    self.server_helper.check_file_readable(self.path, as_user = Users.ADMIN, user_password=self._password)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 1976, in check_file_readable
+    return self.file.check_file_readable(path, as_user, user_password)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 120, in decorated_function
+    return function(*args, **kw)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 1063, in check_file_readable
+    output_handler = output.write)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 509, in exec_cmd
+    return local_run_cmd_linux(command, as_user, user_password, self.sudo_prefix, output_handler, 15, options)
+  File "/Applications/MySQLWorkbench.app/Contents/Resources/plugins/wb_server_management.py", line 324, in local_run_cmd_linux
+    raise InvalidPasswordError("Incorrect password for sudo")
+InvalidPasswordError: Incorrect password for sudo
+
+02:36:39 [ERR][ LogViewGeneric]: Error creating log reader: Incorrect password for sudo
+

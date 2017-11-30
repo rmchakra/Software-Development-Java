@@ -1,0 +1,48 @@
+22:38:24 [INF][      Workbench]: Starting up Workbench
+22:38:24 [INF][   WBContext UI]: Initializing workbench context UI with these values:
+	base dir: /Applications/MySQLWorkbench.app/Contents/Resources
+	plugin path: /Applications/MySQLWorkbench.app/Contents/PlugIns
+	struct path: /Applications/MySQLWorkbench.app/Contents/Resources/grt
+	module path: /Applications/MySQLWorkbench.app/Contents/PlugIns:/Applications/MySQLWorkbench.app/Contents/Resources/plugins
+	library path: /Applications/MySQLWorkbench.app/Contents/Resources/libraries
+	user data dir: /Users/admin/Library/Application Support/MySQL/Workbench
+	open at start: 
+	open type: 
+	run at startup: 
+	run type: 
+	Force SW rendering: No
+	Force OpenGL: No
+	quit when done: No
+22:38:24 [INF][      WBContext]: WbContext::init
+22:38:28 [INF][            WBA]: Looking for extension modules for WBA...
+22:38:28 [INF][            WBA]: 0 extension modules found
+22:38:29 [WRN][            grt]: /Users/admin/Library/Application Support/MySQL/Workbench/connections.xml:17: link '29CE0A61-0E8E-4296-B87F-87DA813D7C4F' <object GrtObject> key=owner could not be resolved
+22:38:29 [INF][      WBContext]: System info:
+ 	MySQL Workbench Community (GPL) for Mac OS X version 6.3.9 CE build 10690321 (64 bit)
+	Configuration Directory: /Users/admin/Library/Application Support/MySQL/Workbench
+	Data Directory: /Applications/MySQLWorkbench.app/Contents/Resources
+	Cairo Version: 1.10.2
+	OS: OS X 10.11.x El Capitan x86_64
+	CPU: 4x Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz - 8.00GiB RAM
+No video adapter info available
+
+22:39:36 [INF][      WBContext]: Connection to prism cancelled by user: canceled
+22:39:37 [ERR][SQL Editor Form]: SqlEditorForm: exception in do_connect method: Exception: Can't connect to MySQL server on 'prism-db.cixpikrggo1y.us-west-1.rds.amazonaws.com' (60)
+22:39:37 [WRN][SQL Editor Form]: Can't connect to MySQL server on 'prism-db.cixpikrggo1y.us-west-1.rds.amazonaws.com' (60)
+22:39:37 [ERR][SQL Editor Form]: Connection failed but remote admin does not seem to be available, rethrowing exception...
+22:39:37 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: Can't connect to MySQL server on 'prism-db.cixpikrggo1y.us-west-1.rds.amazonaws.com' (60)
+22:39:37 [ERR][  GRTDispatcher]: worker: task 'execute sql queries' has failed with error:.Can't connect to MySQL server on 'prism-db.cixpikrggo1y.us-west-1.rds.amazonaws.com' (60)
+22:39:37 [ERR][    WQE backend]: Got an exception during connection: Can't connect to MySQL server on 'prism-db.cixpikrggo1y.us-west-1.rds.amazonaws.com' (60)
+22:40:07 [ERR][SQL Editor Form]: SqlEditorForm: exception in do_connect method: Exception: Too many connections
+22:40:07 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: Too many connections
+22:40:07 [ERR][  GRTDispatcher]: worker: task 'execute sql queries' has failed with error:.Too many connections
+22:40:07 [ERR][    WQE backend]: Got an exception during connection: Too many connections
+22:40:07 [ERR][SQL Editor Form]: SQL editor could not be connected: Too many connections
+22:40:07 [ERR][SQL Editor Form]: Your connection attempt failed for user 'prism_admin' from your host to server at prism-db.cixpikrggo1y.us-west-1.rds.amazonaws.com:3306:
+  Too many connections
+
+Please:
+1 Check that mysql is running on server prism-db.cixpikrggo1y.us-west-1.rds.amazonaws.com
+2 Check that mysql is running on port 3306 (note: 3306 is the default, but this can be changed)
+3 Check the prism_admin has rights to connect to prism-db.cixpikrggo1y.us-west-1.rds.amazonaws.com from your address (mysql rights define what clients can connect to the server and from which machines) 
+4 Make sure you are both providing a password if needed and using the correct password for prism-db.cixpikrggo1y.us-west-1.rds.amazonaws.com connecting from the host address you're connecting from

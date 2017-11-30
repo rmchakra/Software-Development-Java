@@ -1,0 +1,29 @@
+15:27:48 [INF][      Workbench]: Starting up Workbench
+15:27:52 [INF][   WBContext UI]: Initializing workbench context UI with these values:
+	base dir: /Applications/MySQLWorkbench.app/Contents/Resources
+	plugin path: /Applications/MySQLWorkbench.app/Contents/PlugIns
+	struct path: /Applications/MySQLWorkbench.app/Contents/Resources/grt
+	module path: /Applications/MySQLWorkbench.app/Contents/PlugIns:/Applications/MySQLWorkbench.app/Contents/Resources/plugins
+	library path: /Applications/MySQLWorkbench.app/Contents/Resources/libraries
+	user data dir: /Users/admin/Library/Application Support/MySQL/Workbench
+	open at start: -psn_0_45067
+	open type: 
+	run at startup: 
+	run type: 
+	Force SW rendering: No
+	Force OpenGL: No
+	quit when done: No
+15:27:53 [INF][      WBContext]: WbContext::init
+15:28:07 [INF][            WBA]: Looking for extension modules for WBA...
+15:28:07 [INF][            WBA]: 0 extension modules found
+15:28:16 [WRN][            grt]: /Users/admin/Library/Application Support/MySQL/Workbench/connections.xml:17: link '3F3BDF68-FA5B-41E5-B8F0-05C6A4535061' <object GrtObject> key=owner could not be resolved
+15:28:16 [INF][      WBContext]: System info:
+ 	MySQL Workbench Community (GPL) for Mac OS X version 6.3.9 CE build 10690321 (64 bit)
+	Configuration Directory: /Users/admin/Library/Application Support/MySQL/Workbench
+	Data Directory: /Applications/MySQLWorkbench.app/Contents/Resources
+	Cairo Version: 1.10.2
+	OS: OS X 10.11.x El Capitan x86_64
+	CPU: 4x Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz - 8.00GiB RAM
+No video adapter info available
+
+15:28:16 [INF][    WQE backend]: Found auto-save workspace /Users/admin/Library/Application Support/MySQL/Workbench/sql_workspaces/My201SQL-1.autosave

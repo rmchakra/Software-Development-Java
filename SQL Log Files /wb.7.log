@@ -1,0 +1,32 @@
+21:13:47 [INF][      Workbench]: Starting up Workbench
+21:13:51 [INF][   WBContext UI]: Initializing workbench context UI with these values:
+	base dir: /Applications/MySQLWorkbench.app/Contents/Resources
+	plugin path: /Applications/MySQLWorkbench.app/Contents/PlugIns
+	struct path: /Applications/MySQLWorkbench.app/Contents/Resources/grt
+	module path: /Applications/MySQLWorkbench.app/Contents/PlugIns:/Applications/MySQLWorkbench.app/Contents/Resources/plugins
+	library path: /Applications/MySQLWorkbench.app/Contents/Resources/libraries
+	user data dir: /Users/admin/Library/Application Support/MySQL/Workbench
+	open at start: -psn_0_36873
+	open type: 
+	run at startup: 
+	run type: 
+	Force SW rendering: No
+	Force OpenGL: No
+	quit when done: No
+21:13:51 [INF][      WBContext]: WbContext::init
+21:14:23 [INF][            WBA]: Looking for extension modules for WBA...
+21:14:23 [INF][            WBA]: 0 extension modules found
+21:14:25 [WRN][            grt]: /Users/admin/Library/Application Support/MySQL/Workbench/connections.xml:17: link '1C7865E2-5CFC-42A5-95A3-541A193DDDB1' <object GrtObject> key=owner could not be resolved
+21:14:25 [INF][      WBContext]: System info:
+ 	MySQL Workbench Community (GPL) for Mac OS X version 6.3.9 CE build 10690321 (64 bit)
+	Configuration Directory: /Users/admin/Library/Application Support/MySQL/Workbench
+	Data Directory: /Applications/MySQLWorkbench.app/Contents/Resources
+	Cairo Version: 1.10.2
+	OS: OS X 10.11.x El Capitan x86_64
+	CPU: 4x Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz - 8.00GiB RAM
+No video adapter info available
+
+21:14:25 [INF][    WQE backend]: Found auto-save workspace /Users/admin/Library/Application Support/MySQL/Workbench/sql_workspaces/My201SQL-1.autosave
+21:18:55 [INF][SQL Editor Form]: Opened connection 'My201SQL' to MySQL Community Server (GPL) version 5.7.20
+22:05:53 [INF][wb_admin_control.py:query_server_info:725]: WbAdminControl.connect_sql(): The server version stored in the server instance profile was "5.7". Changed to the version reported by the server: "5.7.20"
+22:05:53 [INF][wb_admin_control.py:server_polling_thread:569]: Monitoring thread running...

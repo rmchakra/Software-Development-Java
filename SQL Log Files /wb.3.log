@@ -1,0 +1,53 @@
+16:31:54 [INF][      Workbench]: Starting up Workbench
+16:31:54 [INF][   WBContext UI]: Initializing workbench context UI with these values:
+	base dir: /Applications/MySQLWorkbench.app/Contents/Resources
+	plugin path: /Applications/MySQLWorkbench.app/Contents/PlugIns
+	struct path: /Applications/MySQLWorkbench.app/Contents/Resources/grt
+	module path: /Applications/MySQLWorkbench.app/Contents/PlugIns:/Applications/MySQLWorkbench.app/Contents/Resources/plugins
+	library path: /Applications/MySQLWorkbench.app/Contents/Resources/libraries
+	user data dir: /Users/admin/Library/Application Support/MySQL/Workbench
+	open at start: 
+	open type: 
+	run at startup: 
+	run type: 
+	Force SW rendering: No
+	Force OpenGL: No
+	quit when done: No
+16:31:54 [INF][      WBContext]: WbContext::init
+16:32:00 [INF][            WBA]: Looking for extension modules for WBA...
+16:32:00 [INF][            WBA]: 0 extension modules found
+16:32:01 [WRN][            grt]: /Users/admin/Library/Application Support/MySQL/Workbench/connections.xml:17: link '5D8A54DF-53C3-4AD2-9C22-2E49F39B3932' <object GrtObject> key=owner could not be resolved
+16:32:01 [INF][      WBContext]: System info:
+ 	MySQL Workbench Community (GPL) for Mac OS X version 6.3.9 CE build 10690321 (64 bit)
+	Configuration Directory: /Users/admin/Library/Application Support/MySQL/Workbench
+	Data Directory: /Applications/MySQLWorkbench.app/Contents/Resources
+	Cairo Version: 1.10.2
+	OS: OS X 10.11.x El Capitan x86_64
+	CPU: 4x Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz - 8.00GiB RAM
+No video adapter info available
+
+16:32:01 [INF][    WQE backend]: Found auto-save workspace /Users/admin/Library/Application Support/MySQL/Workbench/sql_workspaces/My201SQL-1.autosave
+16:32:04 [INF][SQL Editor Form]: Opened connection 'My201SQL' to MySQL Community Server (GPL) version 5.7.20
+17:01:06 [WRN][  TableEditorBE]: VARCHAR() is not a valid column typeTEXT() is not a valid column typeTEXT() is not a valid column typeTEXT() is not a valid column typeError Code: 1146. Table 'studentgrades.course' doesn't exist
+22:07:02 [WRN][  TableEditorBE]: VARCHAR() is not a valid column typeCreating stub schema and table rmchakra_201_site.StaffMembers for foreign key
+23:55:45 [WRN][  TableEditorBE]: VARCHAR() is not a valid column typeexception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+00:12:00 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+00:12:16 [ERR][SQL Editor Form]: Error 1075: Incorrect table definition; there can be only one auto column and it must be defined as a key
+SQL Statement:
+ALTER TABLE `rmchakra_201_site`.`meeting` 
+ADD COLUMN `meetingid` INT NULL AUTO_INCREMENT AFTER `room`
+
+
+00:12:48 [ERR][SQL Editor Form]: 
+00:12:59 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+00:12:59 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+00:13:10 [ERR][SQL Editor Form]: Error 1075: Incorrect table definition; there can be only one auto column and it must be defined as a key
+SQL Statement:
+ALTER TABLE `rmchakra_201_site`.`meeting` 
+ADD COLUMN `meetingid` INT NOT NULL AUTO_INCREMENT AFTER `room`
+
+
+00:23:27 [INF][  TableEditorBE]: Creating stub schema and table rmchakra_201_site.meeting for foreign key
+05:01:36 [ERR][SQL Editor Form]: Error Code: 1054. Unknown column '29904R' in 'where clause'
+16:24:26 [INF][      Workbench]: Shutting down Workbench
+16:24:26 [INF][      Workbench]: Workbench shutdown done

@@ -1,0 +1,213 @@
+22:35:55 [INF][      Workbench]: Starting up Workbench
+22:35:57 [INF][   WBContext UI]: Initializing workbench context UI with these values:
+	base dir: /Applications/MySQLWorkbench.app/Contents/Resources
+	plugin path: /Applications/MySQLWorkbench.app/Contents/PlugIns
+	struct path: /Applications/MySQLWorkbench.app/Contents/Resources/grt
+	module path: /Applications/MySQLWorkbench.app/Contents/PlugIns:/Applications/MySQLWorkbench.app/Contents/Resources/plugins
+	library path: /Applications/MySQLWorkbench.app/Contents/Resources/libraries
+	user data dir: /Users/admin/Library/Application Support/MySQL/Workbench
+	open at start: -psn_0_40970
+	open type: 
+	run at startup: 
+	run type: 
+	Force SW rendering: No
+	Force OpenGL: No
+	quit when done: No
+22:35:57 [INF][      WBContext]: WbContext::init
+22:36:12 [INF][            WBA]: Looking for extension modules for WBA...
+22:36:12 [INF][            WBA]: 0 extension modules found
+22:36:30 [WRN][            grt]: /Users/admin/Library/Application Support/MySQL/Workbench/connections.xml:17: link '8BBBBC6A-30DE-471A-90E8-B228D833B1FC' <object GrtObject> key=owner could not be resolved
+22:36:33 [INF][      WBContext]: System info:
+ 	MySQL Workbench Community (GPL) for Mac OS X version 6.3.9 CE build 10690321 (64 bit)
+	Configuration Directory: /Users/admin/Library/Application Support/MySQL/Workbench
+	Data Directory: /Applications/MySQLWorkbench.app/Contents/Resources
+	Cairo Version: 1.10.2
+	OS: OS X 10.11.x El Capitan x86_64
+	CPU: 4x Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz - 8.00GiB RAM
+No video adapter info available
+
+22:36:35 [INF][    WQE backend]: Found auto-save workspace /Users/admin/Library/Application Support/MySQL/Workbench/sql_workspaces/My201SQL-1.autosave
+13:42:09 [INF][SQL Editor Form]: Opened connection 'My201SQL' to MySQL Community Server (GPL) version 5.7.20
+13:54:01 [INF][  TableEditorBE]: Creating stub schema and table Test.table1 for foreign key
+13:54:17 [INF][  TableEditorBE]: Creating stub schema and table Test.table2 for foreign key
+13:55:32 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+13:55:32 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+13:55:49 [ERR][SQL Editor Form]: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `Test.table1`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+
+13:58:05 [INF][  TableEditorBE]: Creating stub schema and table Test.table1 for foreign key
+14:32:58 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+14:32:58 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+14:35:29 [ERR][SQL Editor Form]: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `ljnj`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+
+14:36:28 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+14:36:28 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+14:36:40 [ERR][SQL Editor Form]: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `ljnj`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+
+14:36:57 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+14:36:57 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+14:37:13 [ERR][SQL Editor Form]: Error 1068: Multiple primary key defined
+SQL Statement:
+ALTER TABLE `Test`.`table2` 
+CHANGE COLUMN `idtable2` `idtable2` INT(11) NOT NULL ,
+CHANGE COLUMN `table2col` `table2col` VARCHAR(45) NULL ,
+ADD PRIMARY KEY (`idtable2`)
+
+
+14:37:25 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+14:37:25 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+14:37:45 [ERR][SQL Editor Form]: Error 1068: Multiple primary key defined
+SQL Statement:
+ALTER TABLE `Test`.`table2` 
+CHANGE COLUMN `idtable2` `idtable2` INT(11) NOT NULL ,
+CHANGE COLUMN `table2col` `table2col` VARCHAR(45) NULL ,
+ADD PRIMARY KEY (`idtable2`)
+
+
+14:37:58 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+14:37:58 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+14:38:07 [ERR][SQL Editor Form]: Error 1171: All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+SQL Statement:
+ALTER TABLE `Test`.`table2` 
+CHANGE COLUMN `idtable2` `idtable2` INT(11) NULL ,
+ADD PRIMARY KEY (`table2col`)
+
+
+14:38:20 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+14:38:20 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+14:38:55 [ERR][SQL Editor Form]: Error 1171: All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+SQL Statement:
+ALTER TABLE `Test`.`table2` 
+CHANGE COLUMN `idtable2` `idtable2` INT(11) NULL ,
+CHANGE COLUMN `table2col` `table2col` VARCHAR(45) NULL ,
+ADD PRIMARY KEY (`table2col`),
+ADD UNIQUE INDEX `table2col_UNIQUE` (`table2col` ASC)
+
+
+14:39:20 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+14:39:20 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+14:39:29 [ERR][SQL Editor Form]: Error 1068: Multiple primary key defined
+SQL Statement:
+ALTER TABLE `Test`.`table2` 
+CHANGE COLUMN `idtable2` `idtable2` INT(11) NOT NULL ,
+CHANGE COLUMN `table2col` `table2col` VARCHAR(45) NULL ,
+ADD PRIMARY KEY (`idtable2`)
+
+
+14:40:38 [INF][  TableEditorBE]: Creating stub schema and table Test.table1 for foreign key
+14:40:47 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+14:40:47 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+14:41:56 [ERR][SQL Editor Form]: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `j`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+
+14:43:20 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+14:43:20 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+14:43:25 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+14:43:25 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+14:43:44 [ERR][SQL Editor Form]: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `j`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+Error 1215: Cannot add foreign key constraint
+SQL Statement:
+
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `j`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+
+14:44:00 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+14:44:00 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+14:46:34 [ERR][SQL Editor Form]: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `j`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+
+14:47:02 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+14:47:02 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+14:47:04 [ERR][SQL Editor Form]: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `j`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+
+14:47:34 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+14:47:34 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+14:48:17 [ERR][SQL Editor Form]: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `j`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+
+14:48:36 [INF][  TableEditorBE]: Creating stub schema and table Test.table1 for foreign key
+14:55:16 [INF][  TableEditorBE]: Creating stub schema and table Test.table1 for foreign key
+14:55:34 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+14:55:34 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+14:55:40 [ERR][SQL Editor Form]: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `j`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+

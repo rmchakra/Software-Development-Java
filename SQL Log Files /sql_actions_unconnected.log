@@ -1,0 +1,2342 @@
+[1, 16:27:22] Apply changes to firstSchema: Preparing...
+[1, 16:27:41] Applying changes to firstSchema...: 
+[1, 16:27:41] : Changes applied to firstSchema
+[1, 16:27:43] Apply changes to firstSchema: Changes applied
+[2, 16:30:29] Apply changes to orders: Preparing...
+[2, 16:30:34] Apply changes to orders: 
+[3, 16:34:56] Apply changes to orders: Preparing...
+[3, 16:35:12] Applying changes to orders...: 
+[3, 16:35:12] : Changes applied to orders
+[3, 16:35:25] Apply changes to orders: Changes applied
+[4, 16:36:07] SELECT * FROM firstSchema.orders
+LIMIT 0, 1000
+: Running...
+[4, 16:36:07] SELECT * FROM firstSchema.orders
+LIMIT 0, 1000
+: Fetching...
+[4, 16:36:07] SELECT * FROM firstSchema.orders
+LIMIT 0, 1000
+: 0 row(s) returned
+[5, 16:43:49] Apply changes to orders: Preparing...
+[5, 16:48:51] Applying changes to orders...: 
+[5, 16:48:51] : Changes applied to orders
+[5, 16:48:53] Apply changes to orders: Changes applied
+[1, 17:20:21] DROP DATABASE if exists StudentGrades: Running...
+[1, 17:20:21] DROP DATABASE if exists StudentGrades: 0 row(s) affected, 1 warning(s):
+1008 Can't drop database 'studentgrades'; database doesn't exist
+[2, 17:20:21] CREATE DATABASE StudentGrades: Running...
+[2, 17:20:21] CREATE DATABASE StudentGrades: 1 row(s) affected
+[3, 17:20:21] USE StudentGrades: Running...
+[3, 17:20:21] USE StudentGrades: 0 row(s) affected
+[4, 17:20:21] CREATE TABLE Student (
+  studentID int(11) primary key not null auto_increment,
+  fname varchar(50) not null,
+  lname varchar(50) not null
+): Running...
+[4, 17:20:21] CREATE TABLE Student (
+  studentID int(11) primary key not null auto_increment,
+  fname varchar(50) not null,
+  lname varchar(50) not null
+): 0 row(s) affected
+[5, 17:20:21] INSERT INTO Student (fname, lname) VALUES ('Sheldon', 'Cooper'): Running...
+[5, 17:20:21] INSERT INTO Student (fname, lname) VALUES ('Sheldon', 'Cooper'): 1 row(s) affected
+[6, 17:20:21] INSERT INTO Student (fname, lname) VALUES ('Leonard', 'Hofstadter'): Running...
+[6, 17:20:21] INSERT INTO Student (fname, lname) VALUES ('Leonard', 'Hofstadter'): 1 row(s) affected
+[7, 17:20:21] INSERT INTO Student (fname, lname) VALUES ('Howard', 'Wolowitz'): Running...
+[7, 17:20:21] INSERT INTO Student (fname, lname) VALUES ('Howard', 'Wolowitz'): 1 row(s) affected
+[8, 17:20:21] INSERT INTO Student (fname, lname) VALUES ('Rajesh', 'Koothrappali'): Running...
+[8, 17:20:21] INSERT INTO Student (fname, lname) VALUES ('Rajesh', 'Koothrappali'): 1 row(s) affected
+[9, 17:20:21] CREATE TABLE Class (
+  classID int(11) primary key not null auto_increment,
+  prefix varchar(5) not null,
+  num int(4) not null
+): Running...
+[9, 17:20:21] CREATE TABLE Class (
+  classID int(11) primary key not null auto_increment,
+  prefix varchar(5) not null,
+  num int(4) not null
+): 0 row(s) affected
+[10, 17:20:21] INSERT INTO Class (prefix, num) VALUES ('CSCI', 103): Running...
+[10, 17:20:21] INSERT INTO Class (prefix, num) VALUES ('CSCI', 103): 1 row(s) affected
+[11, 17:20:21] INSERT INTO Class (prefix, num) VALUES ('CSCI', 104): Running...
+[11, 17:20:21] INSERT INTO Class (prefix, num) VALUES ('CSCI', 104): 1 row(s) affected
+[12, 17:20:21] INSERT INTO Class (prefix, num) VALUES ('CSCI', 201): Running...
+[12, 17:20:21] INSERT INTO Class (prefix, num) VALUES ('CSCI', 201): 1 row(s) affected
+[13, 17:20:21] INSERT INTO Class (prefix, num) VALUES ('EE', 101): Running...
+[13, 17:20:21] INSERT INTO Class (prefix, num) VALUES ('EE', 101): 1 row(s) affected
+[14, 17:20:21] INSERT INTO Class (prefix, num) VALUES ('EE', 102): Running...
+[14, 17:20:21] INSERT INTO Class (prefix, num) VALUES ('EE', 102): 1 row(s) affected
+[15, 17:20:21] CREATE TABLE Grade (
+  gradeID int(11) primary key not null auto_increment,
+  classID int(11) not null,
+  studentID int(11) not null,
+  letterGrade varchar(2) not null,
+  FOREIGN KEY fk1(classID) REFERENCES class(classID),
+  FOREIGN KEY fk2(studentID) REFERENCES student(studentID)
+): Running...
+[15, 17:20:21] CREATE TABLE Grade (
+  gradeID int(11) primary key not null auto_increment,
+  classID int(11) not null,
+  studentID int(11) not null,
+  letterGrade varchar(2) not null,
+  FOREIGN KEY fk1(classID) REFERENCES class(classID),
+  FOREIGN KEY fk2(studentID) REFERENCES student(studentID)
+): 0 row(s) affected
+[16, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 1, 'A'): Running...
+[16, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 1, 'A'): 1 row(s) affected
+[17, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 2, 'A'): Running...
+[17, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 2, 'A'): 1 row(s) affected
+[18, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 3, 'A'): Running...
+[18, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 3, 'A'): 1 row(s) affected
+[19, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 4, 'A'): Running...
+[19, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 4, 'A'): 1 row(s) affected
+[20, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 5, 'A'): Running...
+[20, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 5, 'A'): 1 row(s) affected
+[21, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 1, 'A'): Running...
+[21, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 1, 'A'): 1 row(s) affected
+[22, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 2, 'A'): Running...
+[22, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 2, 'A'): 1 row(s) affected
+[23, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 3, 'A'): Running...
+[23, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 3, 'A'): 1 row(s) affected
+[24, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 4, 'A'): Running...
+[24, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 4, 'A'): 1 row(s) affected
+[25, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 5, 'A-'): Running...
+[25, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 5, 'A-'): 1 row(s) affected
+[26, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 1, 'A-'): Running...
+[26, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 1, 'A-'): 1 row(s) affected
+[27, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 2, 'A-'): Running...
+[27, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 2, 'A-'): 1 row(s) affected
+[28, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 3, 'B'): Running...
+[28, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 3, 'B'): 1 row(s) affected
+[29, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 4, 'A'): Running...
+[29, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 4, 'A'): 1 row(s) affected
+[30, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 5, 'B-'): Running...
+[30, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 5, 'B-'): 1 row(s) affected
+[31, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 1, 'A-'): Running...
+[31, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 1, 'A-'): 1 row(s) affected
+[32, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 2, 'B'): Running...
+[32, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 2, 'B'): 1 row(s) affected
+[33, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 3, 'B'): Running...
+[33, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 3, 'B'): 1 row(s) affected
+[34, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 4, 'A'): Running...
+[34, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 4, 'A'): 1 row(s) affected
+[35, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 5, 'A'): Running...
+[35, 17:20:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 5, 'A'): 1 row(s) affected
+[1, 03:14:14] DROP DATABASE if exists StudentGrades: Running...
+[1, 03:14:15] DROP DATABASE if exists StudentGrades: 3 row(s) affected
+[2, 03:14:15] CREATE DATABASE StudentGrades: Running...
+[2, 03:14:15] CREATE DATABASE StudentGrades: 1 row(s) affected
+[3, 03:14:15] USE StudentGrades: Running...
+[3, 03:14:15] USE StudentGrades: 0 row(s) affected
+[4, 03:14:15] CREATE TABLE Student (
+  studentID int(11) primary key not null auto_increment,
+  fname varchar(50) not null,
+  lname varchar(50) not null
+): Running...
+[4, 03:14:15] CREATE TABLE Student (
+  studentID int(11) primary key not null auto_increment,
+  fname varchar(50) not null,
+  lname varchar(50) not null
+): 0 row(s) affected
+[5, 03:14:15] INSERT INTO Student (fname, lname) VALUES ('Sheldon', 'Cooper'): Running...
+[5, 03:14:15] INSERT INTO Student (fname, lname) VALUES ('Sheldon', 'Cooper'): 1 row(s) affected
+[6, 03:14:15] INSERT INTO Student (fname, lname) VALUES ('Leonard', 'Hofstadter'): Running...
+[6, 03:14:15] INSERT INTO Student (fname, lname) VALUES ('Leonard', 'Hofstadter'): 1 row(s) affected
+[7, 03:14:15] INSERT INTO Student (fname, lname) VALUES ('Howard', 'Wolowitz'): Running...
+[7, 03:14:15] INSERT INTO Student (fname, lname) VALUES ('Howard', 'Wolowitz'): 1 row(s) affected
+[8, 03:14:15] INSERT INTO Student (fname, lname) VALUES ('Rajesh', 'Koothrappali'): Running...
+[8, 03:14:15] INSERT INTO Student (fname, lname) VALUES ('Rajesh', 'Koothrappali'): 1 row(s) affected
+[9, 03:14:15] CREATE TABLE Class (
+  classID int(11) primary key not null auto_increment,
+  prefix varchar(5) not null,
+  num int(4) not null
+): Running...
+[9, 03:14:15] CREATE TABLE Class (
+  classID int(11) primary key not null auto_increment,
+  prefix varchar(5) not null,
+  num int(4) not null
+): 0 row(s) affected
+[10, 03:14:15] INSERT INTO Class (prefix, num) VALUES ('CSCI', 103): Running...
+[10, 03:14:15] INSERT INTO Class (prefix, num) VALUES ('CSCI', 103): 1 row(s) affected
+[11, 03:14:15] INSERT INTO Class (prefix, num) VALUES ('CSCI', 104): Running...
+[11, 03:14:15] INSERT INTO Class (prefix, num) VALUES ('CSCI', 104): 1 row(s) affected
+[12, 03:14:15] INSERT INTO Class (prefix, num) VALUES ('CSCI', 201): Running...
+[12, 03:14:15] INSERT INTO Class (prefix, num) VALUES ('CSCI', 201): 1 row(s) affected
+[13, 03:14:15] INSERT INTO Class (prefix, num) VALUES ('EE', 101): Running...
+[13, 03:14:15] INSERT INTO Class (prefix, num) VALUES ('EE', 101): 1 row(s) affected
+[14, 03:14:15] INSERT INTO Class (prefix, num) VALUES ('EE', 102): Running...
+[14, 03:14:15] INSERT INTO Class (prefix, num) VALUES ('EE', 102): 1 row(s) affected
+[15, 03:14:15] CREATE TABLE Grade (
+  gradeID int(11) primary key not null auto_increment,
+  classID int(11) not null,
+  studentID int(11) not null,
+  letterGrade varchar(2) not null,
+  FOREIGN KEY fk1(classID) REFERENCES class(classID),
+  FOREIGN KEY fk2(studentID) REFERENCES student(studentID)
+): Running...
+[15, 03:14:15] CREATE TABLE Grade (
+  gradeID int(11) primary key not null auto_increment,
+  classID int(11) not null,
+  studentID int(11) not null,
+  letterGrade varchar(2) not null,
+  FOREIGN KEY fk1(classID) REFERENCES class(classID),
+  FOREIGN KEY fk2(studentID) REFERENCES student(studentID)
+): 0 row(s) affected
+[16, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 1, 'A'): Running...
+[16, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 1, 'A'): 1 row(s) affected
+[17, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 2, 'A'): Running...
+[17, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 2, 'A'): 1 row(s) affected
+[18, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 3, 'A'): Running...
+[18, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 3, 'A'): 1 row(s) affected
+[19, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 4, 'A'): Running...
+[19, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 4, 'A'): 1 row(s) affected
+[20, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 5, 'A'): Running...
+[20, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 5, 'A'): 1 row(s) affected
+[21, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 1, 'A'): Running...
+[21, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 1, 'A'): 1 row(s) affected
+[22, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 2, 'A'): Running...
+[22, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 2, 'A'): 1 row(s) affected
+[23, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 3, 'A'): Running...
+[23, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 3, 'A'): 1 row(s) affected
+[24, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 4, 'A'): Running...
+[24, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 4, 'A'): 1 row(s) affected
+[25, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 5, 'A-'): Running...
+[25, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 5, 'A-'): 1 row(s) affected
+[26, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 1, 'A-'): Running...
+[26, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 1, 'A-'): 1 row(s) affected
+[27, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 2, 'A-'): Running...
+[27, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 2, 'A-'): 1 row(s) affected
+[28, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 3, 'B'): Running...
+[28, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 3, 'B'): 1 row(s) affected
+[29, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 4, 'A'): Running...
+[29, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 4, 'A'): 1 row(s) affected
+[30, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 5, 'B-'): Running...
+[30, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 5, 'B-'): 1 row(s) affected
+[31, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 1, 'A-'): Running...
+[31, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 1, 'A-'): 1 row(s) affected
+[32, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 2, 'B'): Running...
+[32, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 2, 'B'): 1 row(s) affected
+[33, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 3, 'B'): Running...
+[33, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 3, 'B'): 1 row(s) affected
+[34, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 4, 'A'): Running...
+[34, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 4, 'A'): 1 row(s) affected
+[35, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 5, 'A'): Running...
+[35, 03:14:15] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 5, 'A'): 1 row(s) affected
+[36, 03:16:22] Apply changes to schemaTest2: Preparing...
+[36, 03:16:47] Applying changes to schemaTest2...: 
+[36, 03:16:47] : Changes applied to schemaTest2
+[36, 03:16:50] Apply changes to schemaTest2: Changes applied
+[1, 03:41:38] DROP DATABASE `StudentGrades`: Running...
+[1, 03:41:38] DROP DATABASE `StudentGrades`: 3 row(s) affected
+[2, 03:41:52] DROP DATABASE `schemaTest2`: Running...
+[2, 03:41:52] DROP DATABASE `schemaTest2`: 0 row(s) affected
+[1, 03:47:20] DROP DATABASE if exists StudentGrades: Running...
+[1, 03:47:20] DROP DATABASE if exists StudentGrades: 0 row(s) affected, 1 warning(s):
+1008 Can't drop database 'studentgrades'; database doesn't exist
+[2, 03:47:20] CREATE DATABASE StudentGrades: Running...
+[2, 03:47:20] CREATE DATABASE StudentGrades: 1 row(s) affected
+[3, 03:47:20] USE StudentGrades: Running...
+[3, 03:47:20] USE StudentGrades: 0 row(s) affected
+[4, 03:47:20] CREATE TABLE Student (
+  studentID int(11) primary key not null auto_increment,
+  fname varchar(50) not null,
+  lname varchar(50) not null
+): Running...
+[4, 03:47:20] CREATE TABLE Student (
+  studentID int(11) primary key not null auto_increment,
+  fname varchar(50) not null,
+  lname varchar(50) not null
+): 0 row(s) affected
+[5, 03:47:20] INSERT INTO Student (fname, lname) VALUES ('Sheldon', 'Cooper'): Running...
+[5, 03:47:20] INSERT INTO Student (fname, lname) VALUES ('Sheldon', 'Cooper'): 1 row(s) affected
+[6, 03:47:20] INSERT INTO Student (fname, lname) VALUES ('Leonard', 'Hofstadter'): Running...
+[6, 03:47:20] INSERT INTO Student (fname, lname) VALUES ('Leonard', 'Hofstadter'): 1 row(s) affected
+[7, 03:47:20] INSERT INTO Student (fname, lname) VALUES ('Howard', 'Wolowitz'): Running...
+[7, 03:47:20] INSERT INTO Student (fname, lname) VALUES ('Howard', 'Wolowitz'): 1 row(s) affected
+[8, 03:47:20] INSERT INTO Student (fname, lname) VALUES ('Rajesh', 'Koothrappali'): Running...
+[8, 03:47:20] INSERT INTO Student (fname, lname) VALUES ('Rajesh', 'Koothrappali'): 1 row(s) affected
+[9, 03:47:20] CREATE TABLE Class (
+  classID int(11) primary key not null auto_increment,
+  prefix varchar(5) not null,
+  num int(4) not null
+): Running...
+[9, 03:47:20] CREATE TABLE Class (
+  classID int(11) primary key not null auto_increment,
+  prefix varchar(5) not null,
+  num int(4) not null
+): 0 row(s) affected
+[10, 03:47:20] INSERT INTO Class (prefix, num) VALUES ('CSCI', 103): Running...
+[10, 03:47:20] INSERT INTO Class (prefix, num) VALUES ('CSCI', 103): 1 row(s) affected
+[11, 03:47:20] INSERT INTO Class (prefix, num) VALUES ('CSCI', 104): Running...
+[11, 03:47:20] INSERT INTO Class (prefix, num) VALUES ('CSCI', 104): 1 row(s) affected
+[12, 03:47:20] INSERT INTO Class (prefix, num) VALUES ('CSCI', 201): Running...
+[12, 03:47:20] INSERT INTO Class (prefix, num) VALUES ('CSCI', 201): 1 row(s) affected
+[13, 03:47:20] INSERT INTO Class (prefix, num) VALUES ('EE', 101): Running...
+[13, 03:47:20] INSERT INTO Class (prefix, num) VALUES ('EE', 101): 1 row(s) affected
+[14, 03:47:20] INSERT INTO Class (prefix, num) VALUES ('EE', 102): Running...
+[14, 03:47:20] INSERT INTO Class (prefix, num) VALUES ('EE', 102): 1 row(s) affected
+[15, 03:47:20] CREATE TABLE Grade (
+  gradeID int(11) primary key not null auto_increment,
+  classID int(11) not null,
+  studentID int(11) not null,
+  letterGrade varchar(2) not null,
+  FOREIGN KEY fk1(classID) REFERENCES class(classID),
+  FOREIGN KEY fk2(studentID) REFERENCES student(studentID)
+): Running...
+[15, 03:47:20] CREATE TABLE Grade (
+  gradeID int(11) primary key not null auto_increment,
+  classID int(11) not null,
+  studentID int(11) not null,
+  letterGrade varchar(2) not null,
+  FOREIGN KEY fk1(classID) REFERENCES class(classID),
+  FOREIGN KEY fk2(studentID) REFERENCES student(studentID)
+): 0 row(s) affected
+[16, 03:47:20] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 1, 'A'): Running...
+[16, 03:47:20] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 1, 'A'): 1 row(s) affected
+[17, 03:47:20] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 2, 'A'): Running...
+[17, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 2, 'A'): 1 row(s) affected
+[18, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 3, 'A'): Running...
+[18, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 3, 'A'): 1 row(s) affected
+[19, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 4, 'A'): Running...
+[19, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 4, 'A'): 1 row(s) affected
+[20, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 5, 'A'): Running...
+[20, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (1, 5, 'A'): 1 row(s) affected
+[21, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 1, 'A'): Running...
+[21, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 1, 'A'): 1 row(s) affected
+[22, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 2, 'A'): Running...
+[22, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 2, 'A'): 1 row(s) affected
+[23, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 3, 'A'): Running...
+[23, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 3, 'A'): 1 row(s) affected
+[24, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 4, 'A'): Running...
+[24, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 4, 'A'): 1 row(s) affected
+[25, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 5, 'A-'): Running...
+[25, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (2, 5, 'A-'): 1 row(s) affected
+[26, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 1, 'A-'): Running...
+[26, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 1, 'A-'): 1 row(s) affected
+[27, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 2, 'A-'): Running...
+[27, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 2, 'A-'): 1 row(s) affected
+[28, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 3, 'B'): Running...
+[28, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 3, 'B'): 1 row(s) affected
+[29, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 4, 'A'): Running...
+[29, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 4, 'A'): 1 row(s) affected
+[30, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 5, 'B-'): Running...
+[30, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (3, 5, 'B-'): 1 row(s) affected
+[31, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 1, 'A-'): Running...
+[31, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 1, 'A-'): 1 row(s) affected
+[32, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 2, 'B'): Running...
+[32, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 2, 'B'): 1 row(s) affected
+[33, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 3, 'B'): Running...
+[33, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 3, 'B'): 1 row(s) affected
+[34, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 4, 'A'): Running...
+[34, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 4, 'A'): 1 row(s) affected
+[35, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 5, 'A'): Running...
+[35, 03:47:21] INSERT INTO Grade (studentID, classID, letterGrade) VALUES (4, 5, 'A'): 1 row(s) affected
+[36, 14:52:46] create database javabook: Running...
+[36, 14:52:46] create database javabook: 1 row(s) affected
+[1, 17:49:42] Apply changes to Lab10: Preparing...
+[1, 17:49:46] Applying changes to Lab10...: 
+[1, 17:49:46] : Changes applied to Lab10
+[1, 17:49:48] Apply changes to Lab10: Changes applied
+[2, 17:52:59] Apply changes to User: Preparing...
+[2, 17:53:23] Applying changes to User...: 
+[2, 17:53:23] : Changes applied to User
+[2, 17:53:25] Apply changes to User: Changes applied
+[3, 18:00:47] SELECT * FROM Lab10.User
+LIMIT 0, 1000
+: Running...
+[3, 18:00:47] SELECT * FROM Lab10.User
+LIMIT 0, 1000
+: Fetching...
+[3, 18:00:47] SELECT * FROM Lab10.User
+LIMIT 0, 1000
+: 0 row(s) returned
+[4, 18:04:52] Apply changes to User: Preparing...
+[4, 18:04:54] Applying changes to User...: 
+[4, 18:04:54] : Changes applied to User
+[4, 18:04:56] Apply changes to User: Changes applied
+[5, 18:06:05] Apply changes to PageVisited: Preparing...
+[5, 18:06:09] Applying changes to PageVisited...: 
+[5, 18:06:09] : Changes applied to PageVisited
+[5, 18:06:10] Apply changes to PageVisited: Changes applied
+[6, 18:12:02] SELECT * FROM Lab10.PageVisited
+LIMIT 0, 1000
+: Running...
+[6, 18:12:02] SELECT * FROM Lab10.PageVisited
+LIMIT 0, 1000
+: Fetching...
+[6, 18:12:02] SELECT * FROM Lab10.PageVisited
+LIMIT 0, 1000
+: 0 row(s) returned
+[7, 18:13:05] INSERT INTO `Lab10`.`PageVisited` (`userID`, `pageID`) VALUES ('5', '4'): 1452: Cannot add or update a child row: a foreign key constraint fails (`lab10`.`pagevisited`, CONSTRAINT `userID` FOREIGN KEY (`userID`) REFERENCES `User` (`userID`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+[8, 18:13:39] SELECT * FROM Lab10.PageVisited
+LIMIT 0, 1000
+: Running...
+[8, 18:13:39] SELECT * FROM Lab10.PageVisited
+LIMIT 0, 1000
+: Fetching...
+[8, 18:13:39] SELECT * FROM Lab10.PageVisited
+LIMIT 0, 1000
+: 0 row(s) returned
+[9, 18:13:43] SELECT * FROM Lab10.User
+LIMIT 0, 1000
+: Running...
+[9, 18:13:43] SELECT * FROM Lab10.User
+LIMIT 0, 1000
+: Fetching...
+[9, 18:13:43] SELECT * FROM Lab10.User
+LIMIT 0, 1000
+: 0 row(s) returned
+[10, 18:13:58] INSERT INTO `Lab10`.`PageVisited` (`userID`, `pageID`) VALUES ('5', '5'): 1452: Cannot add or update a child row: a foreign key constraint fails (`lab10`.`pagevisited`, CONSTRAINT `userID` FOREIGN KEY (`userID`) REFERENCES `User` (`userID`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+[11, 18:14:24] INSERT INTO `Lab10`.`PageVisited` (`userID`, `pageID`) VALUES ('5', '5'): 1452: Cannot add or update a child row: a foreign key constraint fails (`lab10`.`pagevisited`, CONSTRAINT `userID` FOREIGN KEY (`userID`) REFERENCES `User` (`userID`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+[12, 18:15:32] SELECT * FROM Lab10.User
+LIMIT 0, 1000
+: Running...
+[12, 18:15:32] SELECT * FROM Lab10.User
+LIMIT 0, 1000
+: Fetching...
+[12, 18:15:32] SELECT * FROM Lab10.User
+LIMIT 0, 1000
+: 0 row(s) returned
+[13, 18:16:34] SELECT * FROM Lab10.User
+LIMIT 0, 1000
+: Running...
+[13, 18:16:34] SELECT * FROM Lab10.User
+LIMIT 0, 1000
+: Fetching...
+[13, 18:16:34] SELECT * FROM Lab10.User
+LIMIT 0, 1000
+: 0 row(s) returned
+[14, 18:16:57] SELECT * FROM Lab10.PageVisited
+LIMIT 0, 1000
+: Running...
+[14, 18:16:57] SELECT * FROM Lab10.PageVisited
+LIMIT 0, 1000
+: Fetching...
+[14, 18:16:57] SELECT * FROM Lab10.PageVisited
+LIMIT 0, 1000
+: 0 row(s) returned
+[15, 18:17:05] INSERT INTO `Lab10`.`PageVisited` (`userID`) VALUES ('1'): 1364: Field 'pageID' doesn't have a default value
+[16, 18:17:18] INSERT INTO `Lab10`.`PageVisited` (`userID`) VALUES ('1'): 1364: Field 'pageID' doesn't have a default value
+[17, 18:19:09] CREATE DATABASE  IF NOT EXISTS `Lab10` /*!40100 DEFAULT CHARACTER SET latin1 */: Running...
+[17, 18:19:09] CREATE DATABASE  IF NOT EXISTS `Lab10` /*!40100 DEFAULT CHARACTER SET latin1 */: 1 row(s) affected, 1 warning(s):
+1007 Can't create database 'Lab10'; database exists
+[18, 18:19:09] USE `Lab10`: Running...
+[18, 18:19:09] USE `Lab10`: 0 row(s) affected
+[19, 18:19:09] /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */: Running...
+[19, 18:19:09] /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */: 0 row(s) affected
+[20, 18:19:09] /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */: Running...
+[20, 18:19:09] /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */: 0 row(s) affected
+[21, 18:19:09] /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */: Running...
+[21, 18:19:09] /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */: 0 row(s) affected
+[22, 18:19:09] /*!40101 SET NAMES utf8 */: Running...
+[22, 18:19:09] /*!40101 SET NAMES utf8 */: 0 row(s) affected
+[23, 18:19:09] /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */: Running...
+[23, 18:19:09] /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */: 0 row(s) affected
+[24, 18:19:09] /*!40103 SET TIME_ZONE='+00:00' */: Running...
+[24, 18:19:09] /*!40103 SET TIME_ZONE='+00:00' */: 0 row(s) affected
+[25, 18:19:09] /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */: Running...
+[25, 18:19:09] /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */: 0 row(s) affected
+[26, 18:19:09] /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */: Running...
+[26, 18:19:09] /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */: 0 row(s) affected
+[27, 18:19:09] /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */: Running...
+[27, 18:19:09] /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */: 0 row(s) affected, 1 warning(s):
+3090 Changing sql mode 'NO_AUTO_CREATE_USER' is deprecated. It will be removed in a future release.
+[28, 18:19:09] /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */: Running...
+[28, 18:19:09] /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */: 0 row(s) affected
+[29, 18:19:09] DROP TABLE IF EXISTS `Page`: Running...
+[29, 18:19:09] DROP TABLE IF EXISTS `Page`: 0 row(s) affected
+[30, 18:19:09] /*!40101 SET @saved_cs_client     = @@character_set_client */: Running...
+[30, 18:19:09] /*!40101 SET @saved_cs_client     = @@character_set_client */: 0 row(s) affected
+[31, 18:19:09] /*!40101 SET character_set_client = utf8 */: Running...
+[31, 18:19:09] /*!40101 SET character_set_client = utf8 */: 0 row(s) affected
+[32, 18:19:09] CREATE TABLE `Page` (
+  `pageID` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`pageID`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1: Running...
+[32, 18:19:09] CREATE TABLE `Page` (
+  `pageID` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`pageID`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1: 0 row(s) affected
+[33, 18:19:09] /*!40101 SET character_set_client = @saved_cs_client */: Running...
+[33, 18:19:09] /*!40101 SET character_set_client = @saved_cs_client */: 0 row(s) affected
+[34, 18:19:09] LOCK TABLES `Page` WRITE: Running...
+[34, 18:19:09] LOCK TABLES `Page` WRITE: 0 row(s) affected
+[35, 18:19:09] /*!40000 ALTER TABLE `Page` DISABLE KEYS */: Running...
+[35, 18:19:09] /*!40000 ALTER TABLE `Page` DISABLE KEYS */: 0 row(s) affected
+[36, 18:19:09] INSERT INTO `Page` VALUES (1,'login.jsp'),(2,'authenticate.jsp'),(3,'cat.jsp'),(4,'dog.jsp'),(5,'fish.jsp'): Running...
+[36, 18:19:09] INSERT INTO `Page` VALUES (1,'login.jsp'),(2,'authenticate.jsp'),(3,'cat.jsp'),(4,'dog.jsp'),(5,'fish.jsp'): 5 row(s) affected
+Records: 5  Duplicates: 0  Warnings: 0
+[37, 18:19:09] /*!40000 ALTER TABLE `Page` ENABLE KEYS */: Running...
+[37, 18:19:09] /*!40000 ALTER TABLE `Page` ENABLE KEYS */: 0 row(s) affected
+[38, 18:19:09] UNLOCK TABLES: Running...
+[38, 18:19:09] UNLOCK TABLES: 0 row(s) affected
+[39, 18:19:09] DROP TABLE IF EXISTS `PageVisited`: Running...
+[39, 18:19:09] DROP TABLE IF EXISTS `PageVisited`: 0 row(s) affected
+[40, 18:19:09] /*!40101 SET @saved_cs_client     = @@character_set_client */: Running...
+[40, 18:19:09] /*!40101 SET @saved_cs_client     = @@character_set_client */: 0 row(s) affected
+[41, 18:19:09] /*!40101 SET character_set_client = utf8 */: Running...
+[41, 18:19:09] /*!40101 SET character_set_client = utf8 */: 0 row(s) affected
+[42, 18:19:09] CREATE TABLE `PageVisited` (
+  `pageVisitedID` int(11) NOT NULL AUTO_INCREMENT,
+  `userID` int(11) NOT NULL,
+  `pageID` int(11) NOT NULL,
+  `count` int(11) NOT NULL,
+  PRIMARY KEY (`pageVisitedID`),
+  KEY `userID_idx` (`userID`),
+  KEY `pageID_idx` (`pageID`),
+  CONSTRAINT `pageID` FOREIGN KEY (`pageID`) REFERENCES `Page` (`pageID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `userID` FOREIGN KEY (`userID`) REFERENCES `User` (`userID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1: Running...
+[42, 18:19:09] CREATE TABLE `PageVisited` (
+  `pageVisitedID` int(11) NOT NULL AUTO_INCREMENT,
+  `userID` int(11) NOT NULL,
+  `pageID` int(11) NOT NULL,
+  `count` int(11) NOT NULL,
+  PRIMARY KEY (`pageVisitedID`),
+  KEY `userID_idx` (`userID`),
+  KEY `pageID_idx` (`pageID`),
+  CONSTRAINT `pageID` FOREIGN KEY (`pageID`) REFERENCES `Page` (`pageID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `userID` FOREIGN KEY (`userID`) REFERENCES `User` (`userID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1: 0 row(s) affected
+[43, 18:19:09] /*!40101 SET character_set_client = @saved_cs_client */: Running...
+[43, 18:19:09] /*!40101 SET character_set_client = @saved_cs_client */: 0 row(s) affected
+[44, 18:19:09] LOCK TABLES `PageVisited` WRITE: Running...
+[44, 18:19:09] LOCK TABLES `PageVisited` WRITE: 0 row(s) affected
+[45, 18:19:09] /*!40000 ALTER TABLE `PageVisited` DISABLE KEYS */: Running...
+[45, 18:19:09] /*!40000 ALTER TABLE `PageVisited` DISABLE KEYS */: 0 row(s) affected
+[46, 18:19:09] /*!40000 ALTER TABLE `PageVisited` ENABLE KEYS */: Running...
+[46, 18:19:09] /*!40000 ALTER TABLE `PageVisited` ENABLE KEYS */: 0 row(s) affected
+[47, 18:19:09] UNLOCK TABLES: Running...
+[47, 18:19:09] UNLOCK TABLES: 0 row(s) affected
+[48, 18:19:09] DROP TABLE IF EXISTS `User`: Running...
+[48, 18:19:09] DROP TABLE IF EXISTS `User`: 0 row(s) affected
+[49, 18:19:09] /*!40101 SET @saved_cs_client     = @@character_set_client */: Running...
+[49, 18:19:09] /*!40101 SET @saved_cs_client     = @@character_set_client */: 0 row(s) affected
+[50, 18:19:09] /*!40101 SET character_set_client = utf8 */: Running...
+[50, 18:19:09] /*!40101 SET character_set_client = utf8 */: 0 row(s) affected
+[51, 18:19:09] CREATE TABLE `User` (
+  `userID` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  PRIMARY KEY (`userID`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1: Running...
+[51, 18:19:09] CREATE TABLE `User` (
+  `userID` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  PRIMARY KEY (`userID`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1: 0 row(s) affected
+[52, 18:19:09] /*!40101 SET character_set_client = @saved_cs_client */: Running...
+[52, 18:19:09] /*!40101 SET character_set_client = @saved_cs_client */: 0 row(s) affected
+[53, 18:19:09] LOCK TABLES `User` WRITE: Running...
+[53, 18:19:09] LOCK TABLES `User` WRITE: 0 row(s) affected
+[54, 18:19:09] /*!40000 ALTER TABLE `User` DISABLE KEYS */: Running...
+[54, 18:19:09] /*!40000 ALTER TABLE `User` DISABLE KEYS */: 0 row(s) affected
+[55, 18:19:09] INSERT INTO `User` VALUES (1,'Barack','barack'),(2,'GeorgeW','georgew'),(3,'Donald','donald'),(4,'Anonymous','a'): Running...
+[55, 18:19:09] INSERT INTO `User` VALUES (1,'Barack','barack'),(2,'GeorgeW','georgew'),(3,'Donald','donald'),(4,'Anonymous','a'): 4 row(s) affected
+Records: 4  Duplicates: 0  Warnings: 0
+[56, 18:19:09] /*!40000 ALTER TABLE `User` ENABLE KEYS */: Running...
+[56, 18:19:09] /*!40000 ALTER TABLE `User` ENABLE KEYS */: 0 row(s) affected
+[57, 18:19:09] UNLOCK TABLES: Running...
+[57, 18:19:09] UNLOCK TABLES: 0 row(s) affected
+[58, 18:19:09] /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */: Running...
+[58, 18:19:09] /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */: 0 row(s) affected
+[59, 18:19:09] /*!40101 SET SQL_MODE=@OLD_SQL_MODE */: Running...
+[59, 18:19:09] /*!40101 SET SQL_MODE=@OLD_SQL_MODE */: 0 row(s) affected, 1 warning(s):
+3090 Changing sql mode 'NO_AUTO_CREATE_USER' is deprecated. It will be removed in a future release.
+[60, 18:19:09] /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */: Running...
+[60, 18:19:09] /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */: 0 row(s) affected
+[61, 18:19:09] /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */: Running...
+[61, 18:19:09] /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */: 0 row(s) affected
+[62, 18:19:09] /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */: Running...
+[62, 18:19:09] /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */: 0 row(s) affected
+[63, 18:19:09] /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */: Running...
+[63, 18:19:09] /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */: 0 row(s) affected
+[64, 18:19:09] /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */: Running...
+[64, 18:19:09] /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */: 0 row(s) affected
+[65, 18:19:09] /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */: Running...
+[65, 18:19:09] /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */: 0 row(s) affected
+[1, 12:26:58] /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */: Running...
+[1, 12:26:58] /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */: 0 row(s) affected
+[2, 12:26:58] /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */: Running...
+[2, 12:26:58] /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */: 0 row(s) affected
+[3, 12:26:58] /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */: Running...
+[3, 12:26:58] /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */: 0 row(s) affected
+[4, 12:26:58] /*!40101 SET NAMES utf8 */: Running...
+[4, 12:26:58] /*!40101 SET NAMES utf8 */: 0 row(s) affected
+[5, 12:26:58] /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */: Running...
+[5, 12:26:58] /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */: 0 row(s) affected
+[6, 12:26:58] /*!40103 SET TIME_ZONE='+00:00' */: Running...
+[6, 12:26:58] /*!40103 SET TIME_ZONE='+00:00' */: 0 row(s) affected
+[7, 12:26:58] /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */: Running...
+[7, 12:26:58] /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */: 0 row(s) affected
+[8, 12:26:58] /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */: Running...
+[8, 12:26:58] /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */: 0 row(s) affected
+[9, 12:26:58] /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */: Running...
+[9, 12:26:58] /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */: 0 row(s) affected, 1 warning(s):
+3090 Changing sql mode 'NO_AUTO_CREATE_USER' is deprecated. It will be removed in a future release.
+[10, 12:26:58] /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */: Running...
+[10, 12:26:58] /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */: 0 row(s) affected
+[11, 12:26:58] DROP TABLE IF EXISTS `user_table`: Running...
+[11, 12:26:58] DROP TABLE IF EXISTS `user_table`: 0 row(s) affected
+[12, 12:26:58] /*!40101 SET @saved_cs_client     = @@character_set_client */: Running...
+[12, 12:26:58] /*!40101 SET @saved_cs_client     = @@character_set_client */: 0 row(s) affected
+[13, 12:26:58] /*!40101 SET character_set_client = utf8 */: Running...
+[13, 12:26:58] /*!40101 SET character_set_client = utf8 */: 0 row(s) affected
+[14, 12:26:58] CREATE TABLE `user_table` (
+  `user_id` int(11) NOT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `bio` varchar(200) DEFAULT NULL,
+  `isActive` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1: Running...
+[14, 12:26:58] CREATE TABLE `user_table` (
+  `user_id` int(11) NOT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `bio` varchar(200) DEFAULT NULL,
+  `isActive` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1: 0 row(s) affected
+[15, 12:26:58] /*!40101 SET character_set_client = @saved_cs_client */: Running...
+[15, 12:26:58] /*!40101 SET character_set_client = @saved_cs_client */: 0 row(s) affected
+[16, 12:26:58] LOCK TABLES `user_table` WRITE: Running...
+[16, 12:26:58] LOCK TABLES `user_table` WRITE: 0 row(s) affected
+[17, 12:26:58] /*!40000 ALTER TABLE `user_table` DISABLE KEYS */: Running...
+[17, 12:26:58] /*!40000 ALTER TABLE `user_table` DISABLE KEYS */: 0 row(s) affected
+[18, 12:26:58] /*!40000 ALTER TABLE `user_table` ENABLE KEYS */: Running...
+[18, 12:26:58] /*!40000 ALTER TABLE `user_table` ENABLE KEYS */: 0 row(s) affected
+[19, 12:26:58] UNLOCK TABLES: Running...
+[19, 12:26:58] UNLOCK TABLES: 0 row(s) affected
+[20, 12:26:58] /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */: Running...
+[20, 12:26:58] /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */: 0 row(s) affected
+[21, 12:26:58] /*!40101 SET SQL_MODE=@OLD_SQL_MODE */: Running...
+[21, 12:26:58] /*!40101 SET SQL_MODE=@OLD_SQL_MODE */: 0 row(s) affected, 1 warning(s):
+3090 Changing sql mode 'NO_AUTO_CREATE_USER' is deprecated. It will be removed in a future release.
+[22, 12:26:58] /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */: Running...
+[22, 12:26:58] /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */: 0 row(s) affected
+[23, 12:26:58] /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */: Running...
+[23, 12:26:58] /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */: 0 row(s) affected
+[24, 12:26:58] /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */: Running...
+[24, 12:26:58] /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */: 0 row(s) affected
+[25, 12:26:58] /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */: Running...
+[25, 12:26:58] /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */: 0 row(s) affected
+[26, 12:26:58] /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */: Running...
+[26, 12:26:58] /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */: 0 row(s) affected
+[27, 12:26:58] /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */: Running...
+[27, 12:26:58] /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */: 0 row(s) affected
+[28, 12:58:07] /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */: Running...
+[28, 12:58:07] /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */: 0 row(s) affected
+[29, 12:58:07] /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */: Running...
+[29, 12:58:07] /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */: 0 row(s) affected
+[30, 12:58:07] /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */: Running...
+[30, 12:58:07] /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */: 0 row(s) affected
+[31, 12:58:07] /*!40101 SET NAMES utf8 */: Running...
+[31, 12:58:07] /*!40101 SET NAMES utf8 */: 0 row(s) affected
+[32, 12:58:07] /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */: Running...
+[32, 12:58:07] /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */: 0 row(s) affected
+[33, 12:58:07] /*!40103 SET TIME_ZONE='+00:00' */: Running...
+[33, 12:58:07] /*!40103 SET TIME_ZONE='+00:00' */: 0 row(s) affected
+[34, 12:58:07] /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */: Running...
+[34, 12:58:07] /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */: 0 row(s) affected
+[35, 12:58:07] /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */: Running...
+[35, 12:58:07] /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */: 0 row(s) affected
+[36, 12:58:07] /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */: Running...
+[36, 12:58:07] /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */: 0 row(s) affected, 1 warning(s):
+3090 Changing sql mode 'NO_AUTO_CREATE_USER' is deprecated. It will be removed in a future release.
+[37, 12:58:07] /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */: Running...
+[37, 12:58:07] /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */: 0 row(s) affected
+[38, 12:58:07] CREATE DATABASE  IF NOT EXISTS `Prism` /*!40100 DEFAULT CHARACTER SET latin1 */: Running...
+[38, 12:58:07] CREATE DATABASE  IF NOT EXISTS `Prism` /*!40100 DEFAULT CHARACTER SET latin1 */: 1 row(s) affected
+[39, 12:58:07] USE `Prism`: Running...
+[39, 12:58:07] USE `Prism`: 0 row(s) affected
+[40, 12:58:07] DROP TABLE IF EXISTS `user_table`: Running...
+[40, 12:58:07] DROP TABLE IF EXISTS `user_table`: 0 row(s) affected
+[41, 12:58:07] /*!40101 SET @saved_cs_client     = @@character_set_client */: Running...
+[41, 12:58:07] /*!40101 SET @saved_cs_client     = @@character_set_client */: 0 row(s) affected
+[42, 12:58:07] /*!40101 SET character_set_client = utf8 */: Running...
+[42, 12:58:07] /*!40101 SET character_set_client = utf8 */: 0 row(s) affected
+[43, 12:58:07] CREATE TABLE `user_table` (
+  `user_id` int(11) NOT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `bio` varchar(200) DEFAULT NULL,
+  `isActive` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1: Running...
+[43, 12:58:07] CREATE TABLE `user_table` (
+  `user_id` int(11) NOT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `bio` varchar(200) DEFAULT NULL,
+  `isActive` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1: 0 row(s) affected
+[44, 12:58:07] /*!40101 SET character_set_client = @saved_cs_client */: Running...
+[44, 12:58:07] /*!40101 SET character_set_client = @saved_cs_client */: 0 row(s) affected
+[45, 12:58:07] LOCK TABLES `user_table` WRITE: Running...
+[45, 12:58:07] LOCK TABLES `user_table` WRITE: 0 row(s) affected
+[46, 12:58:07] /*!40000 ALTER TABLE `user_table` DISABLE KEYS */: Running...
+[46, 12:58:07] /*!40000 ALTER TABLE `user_table` DISABLE KEYS */: 0 row(s) affected
+[47, 12:58:07] /*!40000 ALTER TABLE `user_table` ENABLE KEYS */: Running...
+[47, 12:58:07] /*!40000 ALTER TABLE `user_table` ENABLE KEYS */: 0 row(s) affected
+[48, 12:58:07] UNLOCK TABLES: Running...
+[48, 12:58:07] UNLOCK TABLES: 0 row(s) affected
+[49, 12:58:07] /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */: Running...
+[49, 12:58:07] /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */: 0 row(s) affected
+[50, 12:58:07] /*!40101 SET SQL_MODE=@OLD_SQL_MODE */: Running...
+[50, 12:58:07] /*!40101 SET SQL_MODE=@OLD_SQL_MODE */: 0 row(s) affected, 1 warning(s):
+3090 Changing sql mode 'NO_AUTO_CREATE_USER' is deprecated. It will be removed in a future release.
+[51, 12:58:07] /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */: Running...
+[51, 12:58:07] /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */: 0 row(s) affected
+[52, 12:58:07] /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */: Running...
+[52, 12:58:07] /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */: 0 row(s) affected
+[53, 12:58:07] /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */: Running...
+[53, 12:58:07] /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */: 0 row(s) affected
+[54, 12:58:07] /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */: Running...
+[54, 12:58:07] /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */: 0 row(s) affected
+[55, 12:58:07] /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */: Running...
+[55, 12:58:07] /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */: 0 row(s) affected
+[56, 12:58:07] /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */: Running...
+[56, 12:58:07] /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */: 0 row(s) affected
+[57, 13:00:08] DROP DATABASE `Prism`: Running...
+[57, 13:00:08] DROP DATABASE `Prism`: 1 row(s) affected
+[58, 13:00:24] /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */: Running...
+[58, 13:00:24] /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */: 0 row(s) affected
+[59, 13:00:24] /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */: Running...
+[59, 13:00:24] /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */: 0 row(s) affected
+[60, 13:00:24] /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */: Running...
+[60, 13:00:24] /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */: 0 row(s) affected
+[61, 13:00:24] /*!40101 SET NAMES utf8 */: Running...
+[61, 13:00:24] /*!40101 SET NAMES utf8 */: 0 row(s) affected
+[62, 13:00:24] /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */: Running...
+[62, 13:00:24] /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */: 0 row(s) affected
+[63, 13:00:24] /*!40103 SET TIME_ZONE='+00:00' */: Running...
+[63, 13:00:24] /*!40103 SET TIME_ZONE='+00:00' */: 0 row(s) affected
+[64, 13:00:24] /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */: Running...
+[64, 13:00:24] /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */: 0 row(s) affected
+[65, 13:00:24] /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */: Running...
+[65, 13:00:24] /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */: 0 row(s) affected
+[66, 13:00:24] /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */: Running...
+[66, 13:00:24] /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */: 0 row(s) affected, 1 warning(s):
+3090 Changing sql mode 'NO_AUTO_CREATE_USER' is deprecated. It will be removed in a future release.
+[67, 13:00:24] /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */: Running...
+[67, 13:00:24] /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */: 0 row(s) affected
+[68, 13:00:24] CREATE DATABASE  IF NOT EXISTS `PRISM` /*!40100 DEFAULT CHARACTER SET latin1 */: Running...
+[68, 13:00:24] CREATE DATABASE  IF NOT EXISTS `PRISM` /*!40100 DEFAULT CHARACTER SET latin1 */: 1 row(s) affected
+[69, 13:00:24] USE `PRISM`: Running...
+[69, 13:00:24] USE `PRISM`: 0 row(s) affected
+[70, 13:00:24] DROP TABLE IF EXISTS `user_table`: Running...
+[70, 13:00:24] DROP TABLE IF EXISTS `user_table`: 0 row(s) affected
+[71, 13:00:24] /*!40101 SET @saved_cs_client     = @@character_set_client */: Running...
+[71, 13:00:24] /*!40101 SET @saved_cs_client     = @@character_set_client */: 0 row(s) affected
+[72, 13:00:24] /*!40101 SET character_set_client = utf8 */: Running...
+[72, 13:00:24] /*!40101 SET character_set_client = utf8 */: 0 row(s) affected
+[73, 13:00:24] CREATE TABLE `user_table` (
+  `user_id` int(11) NOT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `bio` varchar(200) DEFAULT NULL,
+  `isActive` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1: Running...
+[73, 13:00:24] CREATE TABLE `user_table` (
+  `user_id` int(11) NOT NULL,
+  `username` varchar(20) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `bio` varchar(200) DEFAULT NULL,
+  `isActive` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1: 0 row(s) affected
+[74, 13:00:24] /*!40101 SET character_set_client = @saved_cs_client */: Running...
+[74, 13:00:24] /*!40101 SET character_set_client = @saved_cs_client */: 0 row(s) affected
+[75, 13:00:24] LOCK TABLES `user_table` WRITE: Running...
+[75, 13:00:24] LOCK TABLES `user_table` WRITE: 0 row(s) affected
+[76, 13:00:24] /*!40000 ALTER TABLE `user_table` DISABLE KEYS */: Running...
+[76, 13:00:24] /*!40000 ALTER TABLE `user_table` DISABLE KEYS */: 0 row(s) affected
+[77, 13:00:24] /*!40000 ALTER TABLE `user_table` ENABLE KEYS */: Running...
+[77, 13:00:24] /*!40000 ALTER TABLE `user_table` ENABLE KEYS */: 0 row(s) affected
+[78, 13:00:24] UNLOCK TABLES: Running...
+[78, 13:00:24] UNLOCK TABLES: 0 row(s) affected
+[79, 13:00:24] /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */: Running...
+[79, 13:00:24] /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */: 0 row(s) affected
+[80, 13:00:24] /*!40101 SET SQL_MODE=@OLD_SQL_MODE */: Running...
+[80, 13:00:24] /*!40101 SET SQL_MODE=@OLD_SQL_MODE */: 0 row(s) affected, 1 warning(s):
+3090 Changing sql mode 'NO_AUTO_CREATE_USER' is deprecated. It will be removed in a future release.
+[81, 13:00:24] /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */: Running...
+[81, 13:00:24] /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */: 0 row(s) affected
+[82, 13:00:24] /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */: Running...
+[82, 13:00:24] /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */: 0 row(s) affected
+[83, 13:00:24] /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */: Running...
+[83, 13:00:24] /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */: 0 row(s) affected
+[84, 13:00:24] /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */: Running...
+[84, 13:00:24] /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */: 0 row(s) affected
+[85, 13:00:24] /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */: Running...
+[85, 13:00:24] /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */: 0 row(s) affected
+[86, 13:00:24] /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */: Running...
+[86, 13:00:24] /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */: 0 row(s) affected
+[87, 13:12:32] SELECT * FROM PRISM.user_table
+LIMIT 0, 1000
+: Running...
+[87, 13:12:32] SELECT * FROM PRISM.user_table
+LIMIT 0, 1000
+: Fetching...
+[87, 13:12:32] SELECT * FROM PRISM.user_table
+LIMIT 0, 1000
+: 0 row(s) returned
+[88, 13:20:10] ANALYZE TABLE `PRISM`.`user_table`: Executing 
+[88, 13:20:10] ANALYZE TABLE `PRISM`.`user_table`: OK
+[89, 14:12:58] SELECT * FROM PRISM.user_table
+LIMIT 0, 1000
+: Running...
+[89, 14:12:58] SELECT * FROM PRISM.user_table
+LIMIT 0, 1000
+: Fetching...
+[89, 14:12:58] SELECT * FROM PRISM.user_table
+LIMIT 0, 1000
+: 0 row(s) returned
+[1, 14:54:53] : Error Code: 2005
+Unknown MySQL server host 'prism-db.cixpikrggo1y.us-west-1.rds.amazonaws.com' (0)
+[2, 14:55:07] SELECT * FROM prism.Entry
+LIMIT 0, 1000
+: Running...
+[2, 14:55:07] SELECT * FROM prism.Entry
+LIMIT 0, 1000
+: Fetching...
+[2, 14:55:25] SELECT * FROM prism.Entry
+LIMIT 0, 1000
+: 0 row(s) returned
+[3, 14:55:42] SELECT * FROM prism.PrismUser
+LIMIT 0, 1000
+: Running...
+[3, 14:55:42] SELECT * FROM prism.PrismUser
+LIMIT 0, 1000
+: Fetching...
+[3, 14:55:42] SELECT * FROM prism.PrismUser
+LIMIT 0, 1000
+: 0 row(s) returned
+[4, 15:08:23] SELECT * FROM prism.PrismUser
+LIMIT 0, 1000
+: Running...
+[4, 15:08:23] SELECT * FROM prism.PrismUser
+LIMIT 0, 1000
+: Fetching...
+[4, 15:08:23] SELECT * FROM prism.PrismUser
+LIMIT 0, 1000
+: 3 row(s) returned
+[5, 15:10:45] 
+UPDATE `prism`.`PrismUser` SET `UserId`=NULL, `Username`=NULL, `Passwd`=NULL, `isActive`=NULL WHERE `UserId`='2': 1062: Duplicate entry '0' for key 'PRIMARY'
+[6, 15:10:45] 
+UPDATE `prism`.`PrismUser` SET `UserId`=NULL, `Username`=NULL, `Passwd`=NULL, `isActive`=NULL WHERE `UserId`='3': 1062: Duplicate entry '0' for key 'PRIMARY'
+[7, 15:11:15] SELECT * FROM prism.PrismUser
+LIMIT 0, 1000
+: Running...
+[7, 15:11:15] SELECT * FROM prism.PrismUser
+LIMIT 0, 1000
+: Fetching...
+[7, 15:11:16] SELECT * FROM prism.PrismUser
+LIMIT 0, 1000
+: 3 row(s) returned
+[8, 15:11:43] 
+UPDATE `prism`.`PrismUser` SET `UserId`=NULL, `Username`=NULL, `Passwd`=NULL, `isActive`=NULL WHERE `UserId`='2': 1062: Duplicate entry '0' for key 'PRIMARY'
+[9, 15:11:43] 
+UPDATE `prism`.`PrismUser` SET `UserId`=NULL, `Username`=NULL, `Passwd`=NULL, `isActive`=NULL WHERE `UserId`='1': 1451: Cannot delete or update a parent row: a foreign key constraint fails (`prism`.`Story`, CONSTRAINT `Story_ibfk_1` FOREIGN KEY (`UserID`) REFERENCES `PrismUser` (`UserId`))
+[10, 15:14:09] delete PrismUser: Running...
+[10, 15:14:09] delete PrismUser: Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[11, 15:15:00] delete PrismUser from prism: Running...
+[11, 15:15:00] delete PrismUser from prism: Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[12, 15:42:26] SELECT * FROM prism.PrismUser
+LIMIT 0, 1000
+: Running...
+[12, 15:42:26] SELECT * FROM prism.PrismUser
+LIMIT 0, 1000
+: Fetching...
+[12, 15:42:26] SELECT * FROM prism.PrismUser
+LIMIT 0, 1000
+: 9 row(s) returned
+[13, 15:43:09] delete PrismUser: Running...
+[13, 15:43:09] delete PrismUser: Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[14, 15:43:22] delete PrismUser from prism: Running...
+[14, 15:43:22] delete PrismUser from prism: Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[15, 15:43:32] SELECT * FROM prism.PrismUser
+LIMIT 0, 1000
+: Running...
+[15, 15:43:32] SELECT * FROM prism.PrismUser
+LIMIT 0, 1000
+: Fetching...
+[15, 15:43:32] SELECT * FROM prism.PrismUser
+LIMIT 0, 1000
+: 9 row(s) returned
+[16, 15:43:45] delete PrismUser from prism: Running...
+[16, 15:43:45] delete PrismUser from prism: Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[17, 15:45:19] delete from PrismUser: Running...
+[17, 15:45:19] delete from PrismUser: Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[18, 15:45:37] delete PrismUser from prism: Running...
+[18, 15:45:37] delete PrismUser from prism: Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[19, 15:47:18] delete PrismUser from prism: Running...
+[19, 15:47:18] delete PrismUser from prism: Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[20, 15:47:43] delete prism.PrismUser: Running...
+[20, 15:47:43] delete prism.PrismUser: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+[21, 15:48:14] delete PrismUser from prism: Running...
+[21, 15:48:14] delete PrismUser from prism: Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[22, 15:48:36] delete prism.PrismUser from prism: Running...
+[22, 15:48:36] delete prism.PrismUser from prism: Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[23, 15:49:23] TRUNCATE `prism`.`PrismUser`: Executing 
+[23, 15:49:23] TRUNCATE `prism`.`PrismUser`: Error Code: 1701
+Cannot truncate a table referenced in a foreign key constraint (`prism`.`Entry`, CONSTRAINT `Entry_ibfk_1` FOREIGN KEY (`UserId`) REFERENCES `prism`.`PrismUser` (`UserId`))
+[24, 16:08:33] SELECT * FROM prism.PrismUser
+LIMIT 0, 1000
+: Running...
+[24, 16:08:33] SELECT * FROM prism.PrismUser
+LIMIT 0, 1000
+: Fetching...
+[24, 16:08:33] SELECT * FROM prism.PrismUser
+LIMIT 0, 1000
+: 9 row(s) returned
+[1, 22:36:40] Could not connect, server may not be running.: Can't connect to MySQL server on 'prism-db.cixpikrggo1y.us-west-1.rds.amazonaws.com' (60)
+[1, 22:39:37] Could not connect, server may not be running.: Can't connect to MySQL server on 'prism-db.cixpikrggo1y.us-west-1.rds.amazonaws.com' (60)
+[1, 16:01:58] Apply changes to Assignment5: Preparing...
+[1, 16:02:04] Applying changes to Assignment5...: 
+[1, 16:02:04] : Changes applied to Assignment5
+[1, 16:02:06] Apply changes to Assignment5: Changes applied
+[2, 16:05:29] Apply changes to DataContainer: Preparing...
+[2, 16:05:32] Applying changes to DataContainer...: 
+[2, 16:05:32] : Changes applied to DataContainer
+[2, 16:05:34] Apply changes to DataContainer: Changes applied
+[3, 16:08:11] Apply changes to DataContainer: Preparing...
+[3, 16:08:13] Applying changes to DataContainer...: 
+[3, 16:08:13] : Changes applied to DataContainer
+[3, 16:09:01] Apply changes to DataContainer: Changes applied
+[1, 13:42:24] Apply changes to Test: Preparing...
+[1, 13:42:26] Applying changes to Test...: 
+[1, 13:42:26] : Changes applied to Test
+[1, 13:42:27] Apply changes to Test: Changes applied
+[2, 13:43:34] Apply changes to table1: Preparing...
+[2, 13:43:35] Applying changes to table1...: 
+[2, 13:43:35] : Changes applied to table1
+[2, 13:43:37] Apply changes to table1: Changes applied
+[3, 13:44:13] Apply changes to table1: Preparing...
+[3, 13:44:14] Applying changes to table1...: 
+[3, 13:44:14] : Changes applied to table1
+[3, 13:44:16] Apply changes to table1: Changes applied
+[4, 13:44:33] Apply changes to table2: Preparing...
+[4, 13:44:34] Applying changes to table2...: 
+[4, 13:44:34] : Changes applied to table2
+[4, 13:44:36] Apply changes to table2: Changes applied
+[5, 13:48:12] Apply changes to table1: Preparing...
+[5, 13:48:14] Applying changes to table1...: 
+[5, 13:48:14] : Changes applied to table1
+[5, 13:48:16] Apply changes to table1: Changes applied
+[6, 13:48:33] SELECT * FROM Test.table2
+LIMIT 0, 1000
+: Running...
+[6, 13:48:33] SELECT * FROM Test.table2
+LIMIT 0, 1000
+: Fetching...
+[6, 13:48:33] SELECT * FROM Test.table2
+LIMIT 0, 1000
+: 0 row(s) returned
+[7, 13:48:58] Apply changes to table2: Preparing...
+[7, 13:49:00] Applying changes to table2...: 
+[7, 13:49:00] : Changes applied to table2
+[7, 13:49:02] Apply changes to table2: Changes applied
+[8, 13:50:04] Apply changes to table2: Preparing...
+[8, 13:50:04] Apply changes to table2: No changes detected
+[9, 13:50:19] Apply changes to table1: Preparing...
+[9, 13:50:20] Applying changes to table1...: 
+[9, 13:50:20] : Changes applied to table1
+[9, 13:50:26] Applying changes to table1...: 
+[9, 13:50:26] : Changes applied to table1
+[9, 13:50:27] Apply changes to table1: Changes applied
+[10, 13:53:24] Apply changes to table2: Preparing...
+[10, 13:53:25] Applying changes to table2...: 
+[10, 13:53:25] : Changes applied to table2
+[10, 13:53:26] Apply changes to table2: Changes applied
+[11, 13:54:52] Apply changes to table2: Preparing...
+[11, 13:55:32] Applying changes to table2...: 
+[11, 13:55:49] Apply changes to table2: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `Test.table1`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+
+[12, 13:56:29] SELECT * FROM Test.table2
+LIMIT 0, 1000
+: Running...
+[12, 13:56:29] SELECT * FROM Test.table2
+LIMIT 0, 1000
+: Fetching...
+[12, 13:56:29] SELECT * FROM Test.table2
+LIMIT 0, 1000
+: 0 row(s) returned
+[13, 13:56:32] SELECT * FROM Test.table1
+LIMIT 0, 1000
+: Running...
+[13, 13:56:32] SELECT * FROM Test.table1
+LIMIT 0, 1000
+: Fetching...
+[13, 13:56:32] SELECT * FROM Test.table1
+LIMIT 0, 1000
+: 0 row(s) returned
+[14, 14:32:56] Apply changes to table2: Preparing...
+[14, 14:32:58] Applying changes to table2...: 
+[14, 14:35:29] Apply changes to table2: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `ljnj`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+
+[15, 14:36:21] Apply changes to table1: Preparing...
+[15, 14:36:23] Applying changes to table1...: 
+[15, 14:36:23] : Changes applied to table1
+[15, 14:36:24] Apply changes to table1: Changes applied
+[16, 14:36:27] Apply changes to table2: Preparing...
+[16, 14:36:28] Applying changes to table2...: 
+[16, 14:36:40] Apply changes to table2: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `ljnj`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+
+[17, 14:36:56] Apply changes to table2: Preparing...
+[17, 14:36:57] Applying changes to table2...: 
+[17, 14:37:13] Apply changes to table2: Error 1068: Multiple primary key defined
+SQL Statement:
+ALTER TABLE `Test`.`table2` 
+CHANGE COLUMN `idtable2` `idtable2` INT(11) NOT NULL ,
+CHANGE COLUMN `table2col` `table2col` VARCHAR(45) NULL ,
+ADD PRIMARY KEY (`idtable2`)
+
+
+[18, 14:37:23] Apply changes to table2: Preparing...
+[18, 14:37:25] Applying changes to table2...: 
+[18, 14:37:45] Apply changes to table2: Error 1068: Multiple primary key defined
+SQL Statement:
+ALTER TABLE `Test`.`table2` 
+CHANGE COLUMN `idtable2` `idtable2` INT(11) NOT NULL ,
+CHANGE COLUMN `table2col` `table2col` VARCHAR(45) NULL ,
+ADD PRIMARY KEY (`idtable2`)
+
+
+[19, 14:37:57] Apply changes to table2: Preparing...
+[19, 14:37:58] Applying changes to table2...: 
+[19, 14:38:07] Apply changes to table2: Error 1171: All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+SQL Statement:
+ALTER TABLE `Test`.`table2` 
+CHANGE COLUMN `idtable2` `idtable2` INT(11) NULL ,
+ADD PRIMARY KEY (`table2col`)
+
+
+[20, 14:38:18] Apply changes to table2: Preparing...
+[20, 14:38:20] Applying changes to table2...: 
+[20, 14:38:55] Apply changes to table2: Error 1171: All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+SQL Statement:
+ALTER TABLE `Test`.`table2` 
+CHANGE COLUMN `idtable2` `idtable2` INT(11) NULL ,
+CHANGE COLUMN `table2col` `table2col` VARCHAR(45) NULL ,
+ADD PRIMARY KEY (`table2col`),
+ADD UNIQUE INDEX `table2col_UNIQUE` (`table2col` ASC)
+
+
+[21, 14:39:10] Apply changes to table1: Preparing...
+[21, 14:39:10] Apply changes to table1: No changes detected
+[22, 14:39:11] Apply changes to table1: Preparing...
+[22, 14:39:11] Apply changes to table1: No changes detected
+[23, 14:39:12] Apply changes to table1: Preparing...
+[23, 14:39:12] Apply changes to table1: No changes detected
+[24, 14:39:18] Apply changes to table2: Preparing...
+[24, 14:39:20] Applying changes to table2...: 
+[24, 14:39:29] Apply changes to table2: Error 1068: Multiple primary key defined
+SQL Statement:
+ALTER TABLE `Test`.`table2` 
+CHANGE COLUMN `idtable2` `idtable2` INT(11) NOT NULL ,
+CHANGE COLUMN `table2col` `table2col` VARCHAR(45) NULL ,
+ADD PRIMARY KEY (`idtable2`)
+
+
+[25, 14:39:37] Apply changes to table2: Preparing...
+[25, 14:39:38] Applying changes to table2...: 
+[25, 14:39:38] : Changes applied to table2
+[25, 14:39:40] Apply changes to table2: Changes applied
+[26, 14:39:56] Apply changes to table2: Preparing...
+[26, 14:39:57] Applying changes to table2...: 
+[26, 14:39:57] : Changes applied to table2
+[26, 14:39:59] Apply changes to table2: Changes applied
+[27, 14:40:08] Apply changes to table2: Preparing...
+[27, 14:40:10] Applying changes to table2...: 
+[27, 14:40:10] : Changes applied to table2
+[27, 14:40:11] Apply changes to table2: Changes applied
+[28, 14:40:22] Apply changes to table1: Preparing...
+[28, 14:40:23] Applying changes to table1...: 
+[28, 14:40:23] : Changes applied to table1
+[28, 14:40:24] Apply changes to table1: Changes applied
+[29, 14:40:46] Apply changes to table2: Preparing...
+[29, 14:40:47] Applying changes to table2...: 
+[29, 14:41:56] Apply changes to table2: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `j`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+
+[30, 14:42:02] SHOW ENGINE INNODB STATUS: Running...
+[30, 14:42:02] SHOW ENGINE INNODB STATUS: Fetching...
+[30, 14:42:02] SHOW ENGINE INNODB STATUS: 1 row(s) returned
+[31, 14:43:18] Apply changes to table2: Preparing...
+[31, 14:43:20] Applying changes to table2...: 
+[31, 14:43:25] Applying changes to table2...: 
+[31, 14:43:44] Apply changes to table2: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `j`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+Error 1215: Cannot add foreign key constraint
+SQL Statement:
+
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `j`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+
+[32, 14:43:53] Apply changes to table1: Preparing...
+[32, 14:43:54] Applying changes to table1...: 
+[32, 14:43:54] : Changes applied to table1
+[32, 14:43:56] Apply changes to table1: Changes applied
+[33, 14:43:58] Apply changes to table2: Preparing...
+[33, 14:44:00] Applying changes to table2...: 
+[33, 14:46:34] Apply changes to table2: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `j`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+
+[34, 14:46:56] Apply changes to table2: Preparing...
+[34, 14:47:01] Applying changes to table2...: 
+[34, 14:47:04] Apply changes to table2: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `j`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+
+[35, 14:47:26] ALTER TABLE `Test`.`table2`  ENGINE=InnoDB: Running...
+[35, 14:47:26] ALTER TABLE `Test`.`table2`  ENGINE=InnoDB: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[36, 14:47:26] ALTER TABLE `Test`.`table1`  ENGINE=InnoDB: Running...
+[36, 14:47:26] ALTER TABLE `Test`.`table1`  ENGINE=InnoDB: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[37, 14:47:33] Apply changes to table2: Preparing...
+[37, 14:47:34] Applying changes to table2...: 
+[37, 14:48:17] Apply changes to table2: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `j`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+
+[38, 14:48:26] Apply changes to table2: Preparing...
+[38, 14:48:29] Applying changes to table2...: 
+[38, 14:48:29] : Changes applied to table2
+[38, 14:48:30] Apply changes to table2: Changes applied
+[39, 14:54:48] Apply changes to table2: Preparing...
+[39, 14:54:50] Applying changes to table2...: 
+[39, 14:54:50] : Changes applied to table2
+[39, 14:54:53] Apply changes to table2: Changes applied
+[40, 14:54:58] Apply changes to table1: Preparing...
+[40, 14:54:59] Applying changes to table1...: 
+[40, 14:54:59] : Changes applied to table1
+[40, 14:55:00] Apply changes to table1: Changes applied
+[41, 14:55:03] Apply changes to table2: Preparing...
+[41, 14:55:03] Apply changes to table2: No changes detected
+[42, 14:55:33] Apply changes to table2: Preparing...
+[42, 14:55:34] Applying changes to table2...: 
+[42, 14:55:40] Apply changes to table2: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+
+ALTER TABLE `Test`.`table2` 
+ADD CONSTRAINT `j`
+  FOREIGN KEY (`table2col`)
+  REFERENCES `Test`.`table1` (`table1col`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+
+[43, 14:56:24] SHOW ENGINE INNODB STATUS: Running...
+[43, 14:56:24] SHOW ENGINE INNODB STATUS: Fetching...
+[43, 14:56:24] SHOW ENGINE INNODB STATUS: 1 row(s) returned
+[1, 00:56:54] Apply changes to table1: Preparing...
+[1, 00:56:56] Applying changes to table1...: 
+[1, 00:56:56] : Changes applied to table1
+[1, 00:56:59] Apply changes to table1: Changes applied
+[2, 00:57:25] Apply changes to table2: Preparing...
+[2, 00:57:27] Applying changes to table2...: 
+[2, 00:57:27] : Changes applied to table2
+[2, 00:57:33] Apply changes to table2: Changes applied
+[3, 01:19:47] SELECT * FROM Test.table1
+LIMIT 0, 1000
+: Running...
+[3, 01:19:47] SELECT * FROM Test.table1
+LIMIT 0, 1000
+: Fetching...
+[3, 01:19:47] SELECT * FROM Test.table1
+LIMIT 0, 1000
+: 0 row(s) returned
+[4, 01:20:08] INSERT INTO `Test`.`table1` (`table1col`) VALUES ('s1'): 1452: Cannot add or update a child row: a foreign key constraint fails (`test`.`table1`, CONSTRAINT `m` FOREIGN KEY (`table1col`) REFERENCES `table2` (`table2col`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+[5, 01:20:21] INSERT INTO `Test`.`table1` (`table1col`) VALUES ('s1'): 1452: Cannot add or update a child row: a foreign key constraint fails (`test`.`table1`, CONSTRAINT `m` FOREIGN KEY (`table1col`) REFERENCES `table2` (`table2col`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+[6, 01:21:07] INSERT INTO `Test`.`table1` (`idtable1`, `table1col`) VALUES ('1', 's1'): 1452: Cannot add or update a child row: a foreign key constraint fails (`test`.`table1`, CONSTRAINT `m` FOREIGN KEY (`table1col`) REFERENCES `table2` (`table2col`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+[7, 01:23:23] SELECT * FROM Test.table2
+LIMIT 0, 1000
+: Running...
+[7, 01:23:23] SELECT * FROM Test.table2
+LIMIT 0, 1000
+: Fetching...
+[7, 01:23:23] SELECT * FROM Test.table2
+LIMIT 0, 1000
+: 0 row(s) returned
+[8, 01:23:58] Refresh Recordset: There are pending changes. Please commit or rollback first.
+[9, 01:24:03] Refresh Recordset: There are pending changes. Please commit or rollback first.
+[10, 01:24:04] Refresh Recordset: There are pending changes. Please commit or rollback first.
+[11, 01:24:35] SELECT * FROM Test.table1
+LIMIT 0, 1000
+: Running...
+[11, 01:24:35] SELECT * FROM Test.table1
+LIMIT 0, 1000
+: Fetching...
+[11, 01:24:35] SELECT * FROM Test.table1
+LIMIT 0, 1000
+: 0 row(s) returned
+[1, 16:32:30] DROP TABLE `Assignment5`.`DataContainer`: Running...
+[1, 16:32:30] DROP TABLE `Assignment5`.`DataContainer`: 0 row(s) affected
+[2, 17:06:19] Apply changes to course: Preparing...
+[2, 17:06:21] Applying changes to course...: 
+[2, 17:06:21] : Changes applied to course
+[2, 17:06:23] Apply changes to course: Changes applied
+[3, 17:06:41] SELECT * FROM Assignment5.course
+LIMIT 0, 1000
+: Running...
+[3, 17:06:41] SELECT * FROM Assignment5.course
+LIMIT 0, 1000
+: Fetching...
+[3, 17:06:41] SELECT * FROM Assignment5.course
+LIMIT 0, 1000
+: 0 row(s) returned
+[4, 17:47:05] Apply changes to rmchakra_201_site: Preparing...
+[4, 17:47:07] Applying changes to rmchakra_201_site...: 
+[4, 17:47:07] : Changes applied to rmchakra_201_site
+[4, 17:47:10] Apply changes to rmchakra_201_site: Changes applied
+[5, 17:50:22] Apply changes to course: Preparing...
+[5, 17:50:22] Apply changes to course: No changes detected
+[6, 17:50:24] Apply changes to course: Preparing...
+[6, 17:50:24] Apply changes to course: No changes detected
+[7, 17:50:46] Apply changes to new_table: Preparing...
+[7, 17:50:47] Applying changes to new_table...: 
+[7, 17:50:47] : Changes applied to new_table
+[7, 17:50:49] Apply changes to new_table: Changes applied
+[8, 17:51:02] Apply changes to course: Preparing...
+[8, 17:51:04] Applying changes to course...: 
+[8, 17:51:04] : Changes applied to course
+[8, 17:51:05] Apply changes to course: Changes applied
+[9, 17:51:35] Apply changes to course: Preparing...
+[9, 17:51:37] Applying changes to course...: 
+[9, 17:51:37] : Changes applied to course
+[9, 17:51:39] Apply changes to course: Changes applied
+[10, 17:52:01] DROP DATABASE `Assignment5`: Running...
+[10, 17:52:01] DROP DATABASE `Assignment5`: 1 row(s) affected
+[11, 17:52:21] DROP DATABASE `firstSchema`: Running...
+[11, 17:52:21] DROP DATABASE `firstSchema`: 1 row(s) affected
+[12, 17:52:28] DROP DATABASE `javabook`: Running...
+[12, 17:52:28] DROP DATABASE `javabook`: 0 row(s) affected
+[13, 17:52:53] DROP DATABASE `Test`: Running...
+[13, 17:52:53] DROP DATABASE `Test`: 2 row(s) affected
+[14, 17:53:04] SELECT * FROM sys.sys_config
+LIMIT 0, 1000
+: Running...
+[14, 17:53:04] SELECT * FROM sys.sys_config
+LIMIT 0, 1000
+: Fetching...
+[14, 17:53:04] SELECT * FROM sys.sys_config
+LIMIT 0, 1000
+: 6 row(s) returned
+[15, 17:53:21] SELECT * FROM sys.sys_config
+LIMIT 0, 1000
+: Running...
+[15, 17:53:21] SELECT * FROM sys.sys_config
+LIMIT 0, 1000
+: Fetching...
+[15, 17:53:21] SELECT * FROM sys.sys_config
+LIMIT 0, 1000
+: 6 row(s) returned
+[16, 17:54:05] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[16, 17:54:05] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[16, 17:54:05] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 0 row(s) returned
+[17, 19:34:31] insert into rmchakra_201_site.course (schoolName, schoolImage, departmentLongName, departmentPrefix, number, title, term, year, syllabus) VALUES ("schoolName", "schoolImage", "departmentLongName", "departmentPrefix", "number", "title", "term", 2017," syllabus"): Running...
+[17, 19:34:31] insert into rmchakra_201_site.course (schoolName, schoolImage, departmentLongName, departmentPrefix, number, title, term, year, syllabus) VALUES ("schoolName", "schoolImage", "departmentLongName", "departmentPrefix", "number", "title", "term", 2017," syllabus"): 1 row(s) affected
+[18, 19:34:38] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[18, 19:34:38] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[18, 19:34:38] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 1 row(s) returned
+[19, 19:35:07] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[19, 19:35:07] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[19, 19:35:07] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 1 row(s) returned
+[20, 20:08:26] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[20, 20:08:26] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[20, 20:08:26] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 0 row(s) returned
+[21, 20:15:17] Apply changes to course: Preparing...
+[21, 20:15:20] Applying changes to course...: 
+[21, 20:15:21] : Changes applied to course
+[21, 20:15:23] Apply changes to course: Changes applied
+[22, 20:17:57] Apply changes to course: Preparing...
+[22, 20:17:57] Apply changes to course: No changes detected
+[23, 20:17:58] Apply changes to course: Preparing...
+[23, 20:17:58] Apply changes to course: No changes detected
+[24, 20:19:48] Apply changes to course: Preparing...
+[24, 20:19:49] Applying changes to course...: 
+[24, 20:19:50] : Changes applied to course
+[24, 20:19:51] Apply changes to course: Changes applied
+[25, 20:22:02] Apply changes to course: Preparing...
+[25, 20:22:06] Applying changes to course...: 
+[25, 20:22:06] : Changes applied to course
+[25, 20:22:07] Apply changes to course: Changes applied
+[26, 20:23:03] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[26, 20:23:03] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[26, 20:23:03] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 1 row(s) returned
+[27, 20:46:23] SELECT schoolImage FROM course WHERE  syllabus = 'http://www-scf.usc.edu/~csci201/syllabus.pdf'
+LIMIT 0, 1000
+: Running...
+[27, 20:46:23] SELECT schoolImage FROM course WHERE  syllabus = 'http://www-scf.usc.edu/~csci201/syllabus.pdf'
+LIMIT 0, 1000
+: Error Code: 1146. Table 'studentgrades.course' doesn't exist
+[28, 20:47:41] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[28, 20:47:41] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[28, 20:47:41] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 4 row(s) returned
+[29, 20:48:10] SELECT schoolImage FROM rmchakra_201_site.course WHERE  syllabus = 'http://www-scf.usc.edu/~csci201/syllabus.pdf'
+LIMIT 0, 1000
+: Running...
+[29, 20:48:10] SELECT schoolImage FROM rmchakra_201_site.course WHERE  syllabus = 'http://www-scf.usc.edu/~csci201/syllabus.pdf'
+LIMIT 0, 1000
+: Fetching...
+[29, 20:48:10] SELECT schoolImage FROM rmchakra_201_site.course WHERE  syllabus = 'http://www-scf.usc.edu/~csci201/syllabus.pdf'
+LIMIT 0, 1000
+: 4 row(s) returned
+[30, 20:54:50] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[30, 20:54:50] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[30, 20:54:50] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 6 row(s) returned
+[31, 20:55:38] TRUNCATE `rmchakra_201_site`.`course`: Executing 
+[31, 20:55:38] TRUNCATE `rmchakra_201_site`.`course`: OK
+[32, 20:55:48] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[32, 20:55:48] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[32, 20:55:48] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 0 row(s) returned
+[33, 20:56:53] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[33, 20:56:53] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[33, 20:56:53] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 1 row(s) returned
+[34, 20:58:11] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[34, 20:58:11] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[34, 20:58:11] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 0 row(s) returned
+[35, 20:59:35] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[35, 20:59:35] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[35, 20:59:35] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 1 row(s) returned
+[36, 20:59:45] TRUNCATE `rmchakra_201_site`.`course`: Executing 
+[36, 20:59:45] TRUNCATE `rmchakra_201_site`.`course`: OK
+[37, 20:59:52] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[37, 20:59:52] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[37, 20:59:52] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 0 row(s) returned
+[38, 22:10:55] Apply changes to StaffMembers: Preparing...
+[38, 22:10:57] Applying changes to StaffMembers...: 
+[38, 22:10:57] : Changes applied to StaffMembers
+[38, 22:10:58] Apply changes to StaffMembers: Changes applied
+[39, 22:11:05] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Running...
+[39, 22:11:05] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Fetching...
+[39, 22:11:05] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: 0 row(s) returned
+[40, 22:19:33] Apply changes to StaffMembers: Preparing...
+[40, 22:19:33] Apply changes to StaffMembers: No changes detected
+[41, 22:19:34] Apply changes to StaffMembers: Preparing...
+[41, 22:19:34] Apply changes to StaffMembers: No changes detected
+[42, 22:19:36] Apply changes to StaffMembers: Preparing...
+[42, 22:19:36] Apply changes to StaffMembers: No changes detected
+[43, 22:35:53] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[43, 22:35:53] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[43, 22:35:53] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 0 row(s) returned
+[44, 22:37:29] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Running...
+[44, 22:37:29] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Fetching...
+[44, 22:37:29] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: 11 row(s) returned
+[45, 22:38:16] TRUNCATE `rmchakra_201_site`.`StaffMembers`: Executing 
+[45, 22:38:16] TRUNCATE `rmchakra_201_site`.`StaffMembers`: OK
+[46, 22:38:22] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Running...
+[46, 22:38:22] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Fetching...
+[46, 22:38:22] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: 0 row(s) returned
+[47, 22:38:32] Apply changes to StaffMembers: Preparing...
+[47, 22:38:36] Applying changes to StaffMembers...: 
+[47, 22:38:36] : Changes applied to StaffMembers
+[47, 22:38:38] Apply changes to StaffMembers: Changes applied
+[48, 22:38:43] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[48, 22:38:43] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[48, 22:38:43] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 1 row(s) returned
+[49, 22:39:17] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[49, 22:39:17] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[49, 22:39:17] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 1 row(s) returned
+[50, 22:39:21] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Running...
+[50, 22:39:21] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Fetching...
+[50, 22:39:21] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: 11 row(s) returned
+[51, 22:39:37] Apply changes to StaffMembers: Preparing...
+[51, 22:39:39] Applying changes to StaffMembers...: 
+[51, 22:39:40] : Changes applied to StaffMembers
+[51, 22:39:41] Apply changes to StaffMembers: Changes applied
+[52, 22:48:08] Apply changes to oh: Preparing...
+[52, 22:48:09] Applying changes to oh...: 
+[52, 22:48:09] : Changes applied to oh
+[52, 22:48:10] Apply changes to oh: Changes applied
+[53, 22:50:09] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Running...
+[53, 22:50:09] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Fetching...
+[53, 22:50:09] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: 0 row(s) returned
+[54, 22:51:00] Apply changes to oh: Preparing...
+[54, 22:51:01] Applying changes to oh...: 
+[54, 22:51:01] : Changes applied to oh
+[54, 22:51:03] Apply changes to oh: Changes applied
+[55, 23:01:30] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Running...
+[55, 23:01:30] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Fetching...
+[55, 23:01:30] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: 0 row(s) returned
+[56, 23:02:40] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Running...
+[56, 23:02:40] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Fetching...
+[56, 23:02:40] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: 11 row(s) returned
+[57, 23:06:48] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[57, 23:06:48] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[57, 23:06:48] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 2 row(s) returned
+[58, 23:07:46] Apply changes to oh: Preparing...
+[58, 23:07:46] Apply changes to oh: No changes detected
+[59, 23:08:45] TRUNCATE `rmchakra_201_site`.`course`: Executing 
+[59, 23:08:45] TRUNCATE `rmchakra_201_site`.`course`: OK
+[60, 23:08:55] TRUNCATE `rmchakra_201_site`.`oh`: Executing 
+[60, 23:08:55] TRUNCATE `rmchakra_201_site`.`oh`: OK
+[61, 23:09:00] TRUNCATE `rmchakra_201_site`.`StaffMembers`: Executing 
+[61, 23:09:00] TRUNCATE `rmchakra_201_site`.`StaffMembers`: OK
+[62, 23:11:23] Apply changes to oh: Preparing...
+[62, 23:11:28] Applying changes to oh...: 
+[62, 23:11:28] : Changes applied to oh
+[62, 23:11:30] Apply changes to oh: Changes applied
+[63, 23:11:37] TRUNCATE `rmchakra_201_site`.`course`: Executing 
+[63, 23:11:37] TRUNCATE `rmchakra_201_site`.`course`: OK
+[64, 23:11:42] TRUNCATE `rmchakra_201_site`.`oh`: Executing 
+[64, 23:11:42] TRUNCATE `rmchakra_201_site`.`oh`: OK
+[65, 23:11:47] TRUNCATE `rmchakra_201_site`.`StaffMembers`: Executing 
+[65, 23:11:47] TRUNCATE `rmchakra_201_site`.`StaffMembers`: OK
+[66, 23:13:34] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Running...
+[66, 23:13:34] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Fetching...
+[66, 23:13:34] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: 32 row(s) returned
+[67, 23:15:07] TRUNCATE `rmchakra_201_site`.`course`: Executing 
+[67, 23:15:07] TRUNCATE `rmchakra_201_site`.`course`: OK
+[68, 23:15:16] TRUNCATE `rmchakra_201_site`.`oh`: Executing 
+[68, 23:15:16] TRUNCATE `rmchakra_201_site`.`oh`: OK
+[69, 23:15:22] TRUNCATE `rmchakra_201_site`.`StaffMembers`: Executing 
+[69, 23:15:22] TRUNCATE `rmchakra_201_site`.`StaffMembers`: OK
+[70, 23:16:12] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Running...
+[70, 23:16:12] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Fetching...
+[70, 23:16:12] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: 11 row(s) returned
+[71, 23:16:24] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Running...
+[71, 23:16:24] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Fetching...
+[71, 23:16:24] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: 32 row(s) returned
+[72, 23:16:43] TRUNCATE `rmchakra_201_site`.`course`: Executing 
+[72, 23:16:43] TRUNCATE `rmchakra_201_site`.`course`: OK
+[73, 23:24:36] TRUNCATE `rmchakra_201_site`.`course`: Executing 
+[73, 23:24:36] TRUNCATE `rmchakra_201_site`.`course`: OK
+[74, 23:24:45] TRUNCATE `rmchakra_201_site`.`oh`: Executing 
+[74, 23:24:45] TRUNCATE `rmchakra_201_site`.`oh`: OK
+[75, 23:24:50] TRUNCATE `rmchakra_201_site`.`StaffMembers`: Executing 
+[75, 23:24:50] TRUNCATE `rmchakra_201_site`.`StaffMembers`: OK
+[76, 23:25:32] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Running...
+[76, 23:25:32] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Fetching...
+[76, 23:25:32] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: 0 row(s) returned
+[77, 23:33:48] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Running...
+[77, 23:33:48] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Fetching...
+[77, 23:33:48] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: 32 row(s) returned
+[78, 23:36:10] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Running...
+[78, 23:36:10] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Fetching...
+[78, 23:36:10] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: 32 row(s) returned
+[79, 23:37:02] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Running...
+[79, 23:37:02] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Fetching...
+[79, 23:37:02] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: 11 row(s) returned
+[80, 23:37:17] Apply changes to oh: Preparing...
+[80, 23:37:19] Applying changes to oh...: 
+[80, 23:37:19] : Changes applied to oh
+[80, 23:37:21] Apply changes to oh: Changes applied
+[81, 23:45:18] Apply changes to oh: Preparing...
+[81, 23:45:18] Apply changes to oh: No changes detected
+[82, 23:45:24] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Running...
+[82, 23:45:24] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Fetching...
+[82, 23:45:24] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: 32 row(s) returned
+[83, 23:46:05] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Running...
+[83, 23:46:05] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Fetching...
+[83, 23:46:05] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: 32 row(s) returned
+[84, 23:58:05] Apply changes to meeting: Preparing...
+[84, 23:58:09] Applying changes to meeting...: 
+[84, 23:58:09] : Changes applied to meeting
+[84, 23:58:10] Apply changes to meeting: Changes applied
+[85, 23:58:29] Apply changes to staffMembers: Preparing...
+[85, 23:58:29] Apply changes to staffMembers: No changes detected
+[86, 23:58:31] Apply changes to staffMembers: Preparing...
+[86, 23:58:31] Apply changes to staffMembers: No changes detected
+[87, 23:58:37] Apply changes to staffMembers: Preparing...
+[87, 23:58:37] Apply changes to staffMembers: No changes detected
+[88, 23:58:42] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Running...
+[88, 23:58:42] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Fetching...
+[88, 23:58:42] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: 11 row(s) returned
+[89, 23:58:57] Apply changes to StaffMembers: Preparing...
+[89, 23:58:57] Apply changes to StaffMembers: No changes detected
+[90, 23:59:04] Apply changes to staffMembers: Preparing...
+[90, 23:59:04] Apply changes to staffMembers: No changes detected
+[91, 00:01:10] Apply changes to meeting: Preparing...
+[91, 00:01:10] Apply changes to meeting: No changes detected
+[92, 00:01:14] SELECT * FROM rmchakra_201_site.meeting
+LIMIT 0, 1000
+: Running...
+[92, 00:01:14] SELECT * FROM rmchakra_201_site.meeting
+LIMIT 0, 1000
+: Fetching...
+[92, 00:01:14] SELECT * FROM rmchakra_201_site.meeting
+LIMIT 0, 1000
+: 0 row(s) returned
+[93, 00:04:58] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Running...
+[93, 00:04:58] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Fetching...
+[93, 00:04:58] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: 32 row(s) returned
+[94, 00:11:58] Apply changes to meeting: Preparing...
+[94, 00:12:00] Applying changes to meeting...: 
+[94, 00:12:16] Apply changes to meeting: Error 1075: Incorrect table definition; there can be only one auto column and it must be defined as a key
+SQL Statement:
+ALTER TABLE `rmchakra_201_site`.`meeting` 
+ADD COLUMN `meetingid` INT NULL AUTO_INCREMENT AFTER `room`
+
+
+[95, 00:12:43] Apply changes to meeting: Preparing...
+[95, 00:12:48] Apply changes to meeting: 
+[96, 00:12:57] Apply changes to meeting: Preparing...
+[96, 00:12:59] Applying changes to meeting...: 
+[96, 00:13:10] Apply changes to meeting: Error 1075: Incorrect table definition; there can be only one auto column and it must be defined as a key
+SQL Statement:
+ALTER TABLE `rmchakra_201_site`.`meeting` 
+ADD COLUMN `meetingid` INT NOT NULL AUTO_INCREMENT AFTER `room`
+
+
+[97, 00:13:45] Apply changes to meeting: Preparing...
+[97, 00:13:46] Applying changes to meeting...: 
+[97, 00:13:46] : Changes applied to meeting
+[97, 00:13:48] Apply changes to meeting: Changes applied
+[98, 00:14:19] SELECT * FROM rmchakra_201_site.meeting
+LIMIT 0, 1000
+: Running...
+[98, 00:14:19] SELECT * FROM rmchakra_201_site.meeting
+LIMIT 0, 1000
+: Fetching...
+[98, 00:14:19] SELECT * FROM rmchakra_201_site.meeting
+LIMIT 0, 1000
+: 0 row(s) returned
+[99, 00:17:12] Apply changes to meeting: Preparing...
+[99, 00:17:16] Applying changes to meeting...: 
+[99, 00:17:16] : Changes applied to meeting
+[99, 00:17:17] Apply changes to meeting: Changes applied
+[100, 00:18:24] SELECT * FROM rmchakra_201_site.meeting
+LIMIT 0, 1000
+: Running...
+[100, 00:18:24] SELECT * FROM rmchakra_201_site.meeting
+LIMIT 0, 1000
+: Fetching...
+[100, 00:18:24] SELECT * FROM rmchakra_201_site.meeting
+LIMIT 0, 1000
+: 8 row(s) returned
+[101, 00:22:24] Apply changes to meetingPeriod: Preparing...
+[101, 00:22:27] Applying changes to meetingPeriod...: 
+[101, 00:22:27] : Changes applied to meetingPeriod
+[101, 00:22:28] Apply changes to meetingPeriod: Changes applied
+[102, 00:22:58] Apply changes to meetingPeriod: Preparing...
+[102, 00:23:00] Applying changes to meetingPeriod...: 
+[102, 00:23:00] : Changes applied to meetingPeriod
+[102, 00:23:01] Apply changes to meetingPeriod: Changes applied
+[103, 00:23:34] Apply changes to meetingPeriod: Preparing...
+[103, 00:23:36] Applying changes to meetingPeriod...: 
+[103, 00:23:36] : Changes applied to meetingPeriod
+[103, 00:23:38] Apply changes to meetingPeriod: Changes applied
+[104, 00:23:52] SELECT * FROM rmchakra_201_site.meetingPeriod
+LIMIT 0, 1000
+: Running...
+[104, 00:23:52] SELECT * FROM rmchakra_201_site.meetingPeriod
+LIMIT 0, 1000
+: Fetching...
+[104, 00:23:52] SELECT * FROM rmchakra_201_site.meetingPeriod
+LIMIT 0, 1000
+: 0 row(s) returned
+[105, 00:39:17] SELECT * FROM rmchakra_201_site.meetingPeriod
+LIMIT 0, 1000
+: Running...
+[105, 00:39:17] SELECT * FROM rmchakra_201_site.meetingPeriod
+LIMIT 0, 1000
+: Fetching...
+[105, 00:39:17] SELECT * FROM rmchakra_201_site.meetingPeriod
+LIMIT 0, 1000
+: 11 row(s) returned
+[106, 01:01:46] SELECT * FROM rmchakra_201_site.meetingPeriod
+LIMIT 0, 1000
+: Running...
+[106, 01:01:46] SELECT * FROM rmchakra_201_site.meetingPeriod
+LIMIT 0, 1000
+: Fetching...
+[106, 01:01:46] SELECT * FROM rmchakra_201_site.meetingPeriod
+LIMIT 0, 1000
+: 11 row(s) returned
+[107, 01:01:53] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[107, 01:01:53] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[107, 01:01:53] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 1 row(s) returned
+[108, 01:22:22] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[108, 01:22:22] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[108, 01:22:22] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 1 row(s) returned
+[109, 01:23:30] Apply changes to course: Preparing...
+[109, 01:23:31] Applying changes to course...: 
+[109, 01:23:31] : Changes applied to course
+[109, 01:23:32] Apply changes to course: Changes applied
+[110, 01:33:17] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[110, 01:33:17] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[110, 01:33:17] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 1 row(s) returned
+[111, 01:38:17] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[111, 01:38:17] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[111, 01:38:17] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 1 row(s) returned
+[112, 01:39:42] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Running...
+[112, 01:39:42] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: Fetching...
+[112, 01:39:42] SELECT * FROM rmchakra_201_site.course
+LIMIT 0, 1000
+: 1 row(s) returned
+[113, 01:57:07] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Running...
+[113, 01:57:07] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Fetching...
+[113, 01:57:07] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: 11 row(s) returned
+[114, 02:22:11] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Running...
+[114, 02:22:11] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Fetching...
+[114, 02:22:11] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: 11 row(s) returned
+[115, 02:22:13] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Running...
+[115, 02:22:13] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Fetching...
+[115, 02:22:13] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: 32 row(s) returned
+[116, 02:45:58] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Running...
+[116, 02:45:58] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: Fetching...
+[116, 02:45:58] SELECT * FROM rmchakra_201_site.oh
+LIMIT 0, 1000
+: 32 row(s) returned
+[117, 03:25:59] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Running...
+[117, 03:25:59] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: Fetching...
+[117, 03:25:59] SELECT * FROM rmchakra_201_site.StaffMembers
+LIMIT 0, 1000
+: 11 row(s) returned
+[118, 03:36:01] SELECT * FROM rmchakra_201_site.meeting
+LIMIT 0, 1000
+: Running...
+[118, 03:36:01] SELECT * FROM rmchakra_201_site.meeting
+LIMIT 0, 1000
+: Fetching...
+[118, 03:36:01] SELECT * FROM rmchakra_201_site.meeting
+LIMIT 0, 1000
+: 8 row(s) returned
+[119, 03:46:22] SELECT * FROM rmchakra_201_site.meetingPeriod
+LIMIT 0, 1000
+: Running...
+[119, 03:46:22] SELECT * FROM rmchakra_201_site.meetingPeriod
+LIMIT 0, 1000
+: Fetching...
+[119, 03:46:22] SELECT * FROM rmchakra_201_site.meetingPeriod
+LIMIT 0, 1000
+: 11 row(s) returned
+[120, 03:57:29] Apply changes to assistants: Preparing...
+[120, 03:57:31] Applying changes to assistants...: 
+[120, 03:57:31] : Changes applied to assistants
+[120, 03:57:32] Apply changes to assistants: Changes applied
+[121, 04:02:50] Apply changes to assistants: Preparing...
+[121, 04:02:50] Apply changes to assistants: No changes detected
+[122, 04:52:09] SELECT * FROM rmchakra_201_site.meetingPeriod
+LIMIT 0, 1000
+: Running...
+[122, 04:52:09] SELECT * FROM rmchakra_201_site.meetingPeriod
+LIMIT 0, 1000
+: Fetching...
+[122, 04:52:09] SELECT * FROM rmchakra_201_site.meetingPeriod
+LIMIT 0, 1000
+: 11 row(s) returned
+[123, 05:01:36] SELECT * FROM rmchakra_201_site.meetingPeriod WHERE section =29904R
+LIMIT 0, 1000
+: Running...
+[123, 05:01:36] SELECT * FROM rmchakra_201_site.meetingPeriod WHERE section =29904R
+LIMIT 0, 1000
+: Error Code: 1054. Unknown column '29904R' in 'where clause'
+[124, 05:43:59] Apply changes to textBooks: Preparing...
+[124, 05:44:02] Applying changes to textBooks...: 
+[124, 05:44:02] : Changes applied to textBooks
+[124, 05:44:04] Apply changes to textBooks: Changes applied
+[125, 05:44:10] SELECT * FROM rmchakra_201_site.textBooks
+LIMIT 0, 1000
+: Running...
+[125, 05:44:10] SELECT * FROM rmchakra_201_site.textBooks
+LIMIT 0, 1000
+: Fetching...
+[125, 05:44:10] SELECT * FROM rmchakra_201_site.textBooks
+LIMIT 0, 1000
+: 0 row(s) returned
+[1, 16:40:04] Apply changes to labs: Preparing...
+[1, 16:40:07] Applying changes to labs...: 
+[1, 16:40:07] : Changes applied to labs
+[1, 16:40:08] Apply changes to labs: Changes applied
+[2, 16:44:55] Apply changes to labs: Preparing...
+[2, 16:44:55] Apply changes to labs: No changes detected
+[3, 16:45:08] SELECT * FROM rmchakra_201_site.labs
+LIMIT 0, 1000
+: Running...
+[3, 16:45:08] SELECT * FROM rmchakra_201_site.labs
+LIMIT 0, 1000
+: Fetching...
+[3, 16:45:08] SELECT * FROM rmchakra_201_site.labs
+LIMIT 0, 1000
+: 0 row(s) returned
+[4, 16:45:25] Apply changes to labs: Preparing...
+[4, 16:45:26] Applying changes to labs...: 
+[4, 16:45:26] : Changes applied to labs
+[4, 16:45:28] Apply changes to labs: Changes applied
+[5, 17:12:54] Apply changes to labFiles: Preparing...
+[5, 17:12:55] Applying changes to labFiles...: 
+[5, 17:12:55] : Changes applied to labFiles
+[5, 17:12:56] Apply changes to labFiles: Changes applied
+[6, 17:13:01] SELECT * FROM rmchakra_201_site.labFiles
+LIMIT 0, 1000
+: Running...
+[6, 17:13:01] SELECT * FROM rmchakra_201_site.labFiles
+LIMIT 0, 1000
+: Fetching...
+[6, 17:13:01] SELECT * FROM rmchakra_201_site.labFiles
+LIMIT 0, 1000
+: 0 row(s) returned
+[7, 18:12:42] Apply changes to weeks: Preparing...
+[7, 18:12:45] Applying changes to weeks...: 
+[7, 18:12:45] : Changes applied to weeks
+[7, 18:12:47] Apply changes to weeks: Changes applied
+[8, 18:26:14] SELECT * FROM rmchakra_201_site.weeks
+LIMIT 0, 1000
+: Running...
+[8, 18:26:14] SELECT * FROM rmchakra_201_site.weeks
+LIMIT 0, 1000
+: Fetching...
+[8, 18:26:14] SELECT * FROM rmchakra_201_site.weeks
+LIMIT 0, 1000
+: 0 row(s) returned
+[9, 18:37:13] Apply changes to weeks: Preparing...
+[9, 18:37:15] Applying changes to weeks...: 
+[9, 18:37:15] : Changes applied to weeks
+[9, 18:37:17] Apply changes to weeks: Changes applied
+[10, 18:58:54] SELECT * FROM rmchakra_201_site.labs
+LIMIT 0, 1000
+: Running...
+[10, 18:58:54] SELECT * FROM rmchakra_201_site.labs
+LIMIT 0, 1000
+: Fetching...
+[10, 18:58:54] SELECT * FROM rmchakra_201_site.labs
+LIMIT 0, 1000
+: 7 row(s) returned
+[11, 18:59:55] SELECT * FROM rmchakra_201_site.labs
+LIMIT 0, 1000
+: Running...
+[11, 18:59:55] SELECT * FROM rmchakra_201_site.labs
+LIMIT 0, 1000
+: Fetching...
+[11, 18:59:55] SELECT * FROM rmchakra_201_site.labs
+LIMIT 0, 1000
+: 7 row(s) returned
+[12, 19:13:22] SELECT * FROM rmchakra_201_site.labFiles
+LIMIT 0, 1000
+: Running...
+[12, 19:13:22] SELECT * FROM rmchakra_201_site.labFiles
+LIMIT 0, 1000
+: Fetching...
+[12, 19:13:22] SELECT * FROM rmchakra_201_site.labFiles
+LIMIT 0, 1000
+: 7 row(s) returned
+[13, 19:25:29] SELECT * FROM rmchakra_201_site.labs
+LIMIT 0, 1000
+: Running...
+[13, 19:25:29] SELECT * FROM rmchakra_201_site.labs
+LIMIT 0, 1000
+: Fetching...
+[13, 19:25:29] SELECT * FROM rmchakra_201_site.labs
+LIMIT 0, 1000
+: 7 row(s) returned
+[14, 19:25:47] SELECT * FROM rmchakra_201_site.labs
+LIMIT 0, 1000
+: Running...
+[14, 19:25:47] SELECT * FROM rmchakra_201_site.labs
+LIMIT 0, 1000
+: Fetching...
+[14, 19:25:47] SELECT * FROM rmchakra_201_site.labs
+LIMIT 0, 1000
+: 7 row(s) returned
+[15, 19:25:48] SELECT * FROM rmchakra_201_site.labFiles
+LIMIT 0, 1000
+: Running...
+[15, 19:25:48] SELECT * FROM rmchakra_201_site.labFiles
+LIMIT 0, 1000
+: Fetching...
+[15, 19:25:48] SELECT * FROM rmchakra_201_site.labFiles
+LIMIT 0, 1000
+: 7 row(s) returned
+[16, 19:57:56] SELECT * FROM rmchakra_201_site.labs
+LIMIT 0, 1000
+: Running...
+[16, 19:57:56] SELECT * FROM rmchakra_201_site.labs
+LIMIT 0, 1000
+: Fetching...
+[16, 19:57:56] SELECT * FROM rmchakra_201_site.labs
+LIMIT 0, 1000
+: 7 row(s) returned
+[17, 19:59:02] Apply changes to lectures: Preparing...
+[17, 19:59:05] Applying changes to lectures...: 
+[17, 19:59:05] : Changes applied to lectures
+[17, 19:59:06] Apply changes to lectures: Changes applied
+[18, 20:00:36] SELECT * FROM rmchakra_201_site.lectures
+LIMIT 0, 1000
+: Running...
+[18, 20:00:36] SELECT * FROM rmchakra_201_site.lectures
+LIMIT 0, 1000
+: Fetching...
+[18, 20:00:36] SELECT * FROM rmchakra_201_site.lectures
+LIMIT 0, 1000
+: 0 row(s) returned
+[19, 20:03:06] Apply changes to lectures: Preparing...
+[19, 20:03:07] Applying changes to lectures...: 
+[19, 20:03:07] : Changes applied to lectures
+[19, 20:03:08] Apply changes to lectures: Changes applied
+[20, 20:28:53] Apply changes to topics: Preparing...
+[20, 20:28:55] Applying changes to topics...: 
+[20, 20:28:55] : Changes applied to topics
+[20, 20:28:57] Apply changes to topics: Changes applied
+[21, 20:29:08] SELECT * FROM rmchakra_201_site.topics
+LIMIT 0, 1000
+: Running...
+[21, 20:29:08] SELECT * FROM rmchakra_201_site.topics
+LIMIT 0, 1000
+: Fetching...
+[21, 20:29:08] SELECT * FROM rmchakra_201_site.topics
+LIMIT 0, 1000
+: 0 row(s) returned
+[22, 20:49:06] Apply changes to programFiles: Preparing...
+[22, 20:49:10] Applying changes to programFiles...: 
+[22, 20:49:10] : Changes applied to programFiles
+[22, 20:49:12] Apply changes to programFiles: Changes applied
+[23, 20:49:41] SELECT * FROM rmchakra_201_site.programFiles
+LIMIT 0, 1000
+: Running...
+[23, 20:49:41] SELECT * FROM rmchakra_201_site.programFiles
+LIMIT 0, 1000
+: Fetching...
+[23, 20:49:41] SELECT * FROM rmchakra_201_site.programFiles
+LIMIT 0, 1000
+: 0 row(s) returned
+[24, 20:58:11] Apply changes to topics: Preparing...
+[24, 20:58:13] Applying changes to topics...: 
+[24, 20:58:13] : Changes applied to topics
+[24, 20:58:13] Apply changes to topics: Changes applied
+[25, 21:00:18] Apply changes to topics: Preparing...
+[25, 21:00:18] Apply changes to topics: No changes detected
+[26, 21:00:19] Apply changes to topics: Preparing...
+[26, 21:00:19] Apply changes to topics: No changes detected
+[27, 21:04:47] SELECT * FROM rmchakra_201_site.topics
+LIMIT 0, 1000
+: Running...
+[27, 21:04:47] SELECT * FROM rmchakra_201_site.topics
+LIMIT 0, 1000
+: Fetching...
+[27, 21:04:47] SELECT * FROM rmchakra_201_site.topics
+LIMIT 0, 1000
+: 31 row(s) returned
+[28, 21:05:20] SELECT * FROM rmchakra_201_site.programFiles
+LIMIT 0, 1000
+: Running...
+[28, 21:05:20] SELECT * FROM rmchakra_201_site.programFiles
+LIMIT 0, 1000
+: Fetching...
+[28, 21:05:20] SELECT * FROM rmchakra_201_site.programFiles
+LIMIT 0, 1000
+: 22 row(s) returned
+[29, 21:06:52] SELECT * FROM rmchakra_201_site.programFiles
+LIMIT 0, 1000
+: Running...
+[29, 21:06:52] SELECT * FROM rmchakra_201_site.programFiles
+LIMIT 0, 1000
+: Fetching...
+[29, 21:06:52] SELECT * FROM rmchakra_201_site.programFiles
+LIMIT 0, 1000
+: 22 row(s) returned
+[30, 21:07:03] SELECT * FROM rmchakra_201_site.topics
+LIMIT 0, 1000
+: Running...
+[30, 21:07:03] SELECT * FROM rmchakra_201_site.topics
+LIMIT 0, 1000
+: Fetching...
+[30, 21:07:03] SELECT * FROM rmchakra_201_site.topics
+LIMIT 0, 1000
+: 31 row(s) returned
+[31, 21:07:17] Apply changes to topics: Preparing...
+[31, 21:07:20] Applying changes to topics...: 
+[31, 21:07:20] : Changes applied to topics
+[31, 21:07:21] Apply changes to topics: Changes applied
+[32, 21:11:00] SELECT * FROM rmchakra_201_site.lectures
+LIMIT 0, 1000
+: Running...
+[32, 21:11:00] SELECT * FROM rmchakra_201_site.lectures
+LIMIT 0, 1000
+: Fetching...
+[32, 21:11:00] SELECT * FROM rmchakra_201_site.lectures
+LIMIT 0, 1000
+: 12 row(s) returned
+[33, 21:16:52] SELECT * FROM rmchakra_201_site.topics
+LIMIT 0, 1000
+: Running...
+[33, 21:16:52] SELECT * FROM rmchakra_201_site.topics
+LIMIT 0, 1000
+: Fetching...
+[33, 21:16:52] SELECT * FROM rmchakra_201_site.topics
+LIMIT 0, 1000
+: 31 row(s) returned
+[34, 21:31:56] SELECT * FROM rmchakra_201_site.programFiles
+LIMIT 0, 1000
+: Running...
+[34, 21:31:56] SELECT * FROM rmchakra_201_site.programFiles
+LIMIT 0, 1000
+: Fetching...
+[34, 21:31:56] SELECT * FROM rmchakra_201_site.programFiles
+LIMIT 0, 1000
+: 22 row(s) returned
+[35, 21:38:50] Apply changes to programFiles: Preparing...
+[35, 21:38:51] Applying changes to programFiles...: 
+[35, 21:38:51] : Changes applied to programFiles
+[35, 21:38:52] Apply changes to programFiles: Changes applied
+[36, 21:45:05] SELECT * FROM rmchakra_201_site.programFiles
+LIMIT 0, 1000
+: Running...
+[36, 21:45:05] SELECT * FROM rmchakra_201_site.programFiles
+LIMIT 0, 1000
+: Fetching...
+[36, 21:45:05] SELECT * FROM rmchakra_201_site.programFiles
+LIMIT 0, 1000
+: 22 row(s) returned
+[37, 22:15:22] SELECT * FROM rmchakra_201_site.topics
+LIMIT 0, 1000
+: Running...
+[37, 22:15:22] SELECT * FROM rmchakra_201_site.topics
+LIMIT 0, 1000
+: Fetching...
+[37, 22:15:22] SELECT * FROM rmchakra_201_site.topics
+LIMIT 0, 1000
+: 31 row(s) returned
+[38, 22:25:22] Apply changes to assignments: Preparing...
+[38, 22:25:25] Applying changes to assignments...: 
+[38, 22:25:25] : Changes applied to assignments
+[38, 22:25:26] Apply changes to assignments: Changes applied
+[39, 22:30:12] Apply changes to assignments: Preparing...
+[39, 22:30:12] Apply changes to assignments: No changes detected
+[40, 22:30:16] SELECT * FROM rmchakra_201_site.assignments
+LIMIT 0, 1000
+: Running...
+[40, 22:30:16] SELECT * FROM rmchakra_201_site.assignments
+LIMIT 0, 1000
+: Fetching...
+[40, 22:30:16] SELECT * FROM rmchakra_201_site.assignments
+LIMIT 0, 1000
+: 0 row(s) returned
+[41, 22:35:55] Apply changes to assignments: Preparing...
+[41, 22:35:57] Applying changes to assignments...: 
+[41, 22:35:57] : Changes applied to assignments
+[41, 22:35:58] Apply changes to assignments: Changes applied
+[42, 22:38:57] Apply changes to assignments: Preparing...
+[42, 22:38:59] Applying changes to assignments...: 
+[42, 22:38:59] : Changes applied to assignments
+[42, 22:39:01] Apply changes to assignments: Changes applied
+[43, 22:44:02] Apply changes to assignmentFiles: Preparing...
+[43, 22:44:04] Applying changes to assignmentFiles...: 
+[43, 22:44:04] : Changes applied to assignmentFiles
+[43, 22:44:05] Apply changes to assignmentFiles: Changes applied
+[44, 22:45:12] Apply changes to assignmentFiles: Preparing...
+[44, 22:45:12] Apply changes to assignmentFiles: No changes detected
+[45, 22:45:20] SELECT * FROM rmchakra_201_site.assignmentFiles
+LIMIT 0, 1000
+: Running...
+[45, 22:45:20] SELECT * FROM rmchakra_201_site.assignmentFiles
+LIMIT 0, 1000
+: Fetching...
+[45, 22:45:20] SELECT * FROM rmchakra_201_site.assignmentFiles
+LIMIT 0, 1000
+: 0 row(s) returned
+[46, 23:09:16] SELECT * FROM rmchakra_201_site.assignmentFiles
+LIMIT 0, 1000
+: Running...
+[46, 23:09:16] SELECT * FROM rmchakra_201_site.assignmentFiles
+LIMIT 0, 1000
+: Fetching...
+[46, 23:09:16] SELECT * FROM rmchakra_201_site.assignmentFiles
+LIMIT 0, 1000
+: 0 row(s) returned
+[47, 23:28:21] SELECT * FROM rmchakra_201_site.assignments
+LIMIT 0, 1000
+: Running...
+[47, 23:28:21] SELECT * FROM rmchakra_201_site.assignments
+LIMIT 0, 1000
+: Fetching...
+[47, 23:28:21] SELECT * FROM rmchakra_201_site.assignments
+LIMIT 0, 1000
+: 0 row(s) returned
+[48, 23:28:31] Apply changes to assignments: Preparing...
+[48, 23:28:32] Applying changes to assignments...: 
+[48, 23:28:32] : Changes applied to assignments
+[48, 23:28:34] Apply changes to assignments: Changes applied
+[49, 23:31:12] Apply changes to assignments: Preparing...
+[49, 23:31:15] Applying changes to assignments...: 
+[49, 23:31:15] : Changes applied to assignments
+[49, 23:31:16] Apply changes to assignments: Changes applied
+[50, 23:35:20] Apply changes to assignmentFiles: Preparing...
+[50, 23:35:22] Applying changes to assignmentFiles...: 
+[50, 23:35:22] : Changes applied to assignmentFiles
+[50, 23:35:30] Apply changes to assignmentFiles: Changes applied
+[51, 23:36:04] SELECT * FROM rmchakra_201_site.assignmentFiles
+LIMIT 0, 1000
+: Running...
+[51, 23:36:04] SELECT * FROM rmchakra_201_site.assignmentFiles
+LIMIT 0, 1000
+: Fetching...
+[51, 23:36:04] SELECT * FROM rmchakra_201_site.assignmentFiles
+LIMIT 0, 1000
+: 19 row(s) returned
+[52, 23:49:28] Apply changes to assignments: Preparing...
+[52, 23:49:29] Applying changes to assignments...: 
+[52, 23:49:29] : Changes applied to assignments
+[52, 23:49:31] Apply changes to assignments: Changes applied
+[53, 23:49:44] Apply changes to assignments: Preparing...
+[53, 23:49:46] Applying changes to assignments...: 
+[53, 23:49:46] : Changes applied to assignments
+[53, 23:49:47] Apply changes to assignments: Changes applied
+[54, 23:49:55] Apply changes to assignmentFiles: Preparing...
+[54, 23:49:56] Applying changes to assignmentFiles...: 
+[54, 23:50:07] Apply changes to assignmentFiles: Error 1215: Cannot add foreign key constraint
+SQL Statement:
+
+ALTER TABLE `rmchakra_201_site`.`assignmentFiles` 
+ADD CONSTRAINT `n`
+  FOREIGN KEY (`number`)
+  REFERENCES `rmchakra_201_site`.`assignments` (`number`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
+
+
+[55, 23:51:23] Apply changes to assignmentFiles: Preparing...
+[55, 23:51:28] Apply changes to assignmentFiles: 
+[56, 23:52:03] Apply changes to assignmentFiles: Preparing...
+[56, 23:52:05] Applying changes to assignmentFiles...: 
+[56, 23:52:05] : Changes applied to assignmentFiles
+[56, 23:52:07] Apply changes to assignmentFiles: Changes applied
+[57, 23:52:36] Apply changes to assignmentFiles: Preparing...
+[57, 23:52:47] Apply changes to assignmentFiles: 
+[58, 23:52:59] Apply changes to assignmentFiles: Preparing...
+[58, 23:53:06] Apply changes to assignmentFiles: 

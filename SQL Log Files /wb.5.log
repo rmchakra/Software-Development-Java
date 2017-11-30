@@ -1,0 +1,44 @@
+23:41:22 [INF][      Workbench]: Starting up Workbench
+23:41:27 [INF][   WBContext UI]: Initializing workbench context UI with these values:
+	base dir: /Applications/MySQLWorkbench.app/Contents/Resources
+	plugin path: /Applications/MySQLWorkbench.app/Contents/PlugIns
+	struct path: /Applications/MySQLWorkbench.app/Contents/Resources/grt
+	module path: /Applications/MySQLWorkbench.app/Contents/PlugIns:/Applications/MySQLWorkbench.app/Contents/Resources/plugins
+	library path: /Applications/MySQLWorkbench.app/Contents/Resources/libraries
+	user data dir: /Users/admin/Library/Application Support/MySQL/Workbench
+	open at start: -psn_0_36873
+	open type: 
+	run at startup: 
+	run type: 
+	Force SW rendering: No
+	Force OpenGL: No
+	quit when done: No
+23:41:27 [INF][      WBContext]: WbContext::init
+23:41:40 [INF][            WBA]: Looking for extension modules for WBA...
+23:41:40 [INF][            WBA]: 0 extension modules found
+23:41:41 [WRN][            grt]: /Users/admin/Library/Application Support/MySQL/Workbench/connections.xml:17: link '94E4B3C4-D6D0-4E1C-B9BA-F34B073976BD' <object GrtObject> key=owner could not be resolved
+23:41:42 [INF][      WBContext]: System info:
+ 	MySQL Workbench Community (GPL) for Mac OS X version 6.3.9 CE build 10690321 (64 bit)
+	Configuration Directory: /Users/admin/Library/Application Support/MySQL/Workbench
+	Data Directory: /Applications/MySQLWorkbench.app/Contents/Resources
+	Cairo Version: 1.10.2
+	OS: OS X 10.11.x El Capitan x86_64
+	CPU: 4x Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz - 8.00GiB RAM
+No video adapter info available
+
+23:41:42 [INF][    WQE backend]: Found auto-save workspace /Users/admin/Library/Application Support/MySQL/Workbench/sql_workspaces/My201SQL-1.autosave
+23:50:39 [INF][SQL Editor Form]: Opened connection 'My201SQL' to MySQL Community Server (GPL) version 5.7.20
+00:56:47 [INF][  TableEditorBE]: Creating stub schema and table Test.table2 for foreign key
+00:57:18 [INF][  TableEditorBE]: Creating stub schema and table Test.table1 for foreign key
+01:20:08 [ERR][SQL Editor Form]: 1452: Cannot add or update a child row: a foreign key constraint fails (`test`.`table1`, CONSTRAINT `m` FOREIGN KEY (`table1col`) REFERENCES `table2` (`table2col`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+01:20:08 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+01:20:08 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+01:20:21 [ERR][SQL Editor Form]: 1452: Cannot add or update a child row: a foreign key constraint fails (`test`.`table1`, CONSTRAINT `m` FOREIGN KEY (`table1col`) REFERENCES `table2` (`table2col`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+01:20:21 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+01:20:21 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+01:21:07 [ERR][SQL Editor Form]: 1452: Cannot add or update a child row: a foreign key constraint fails (`test`.`table1`, CONSTRAINT `m` FOREIGN KEY (`table1col`) REFERENCES `table2` (`table2col`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+01:21:07 [ERR][  GRTDispatcher]: exception in grt execute_task, continuing: Exception: There was an error while applying the SQL script to the database.
+01:21:07 [ERR][  GRTDispatcher]: worker: task 'wizard task' has failed with error:.There was an error while applying the SQL script to the database.
+01:23:58 [ERR][SQL Editor Form]: There are pending changes. Please commit or rollback first.
+01:24:03 [ERR][SQL Editor Form]: There are pending changes. Please commit or rollback first.
+01:24:04 [ERR][SQL Editor Form]: There are pending changes. Please commit or rollback first.
